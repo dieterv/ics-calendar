@@ -1,0 +1,614 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ICS Calendar\n"
+"POT-Creation-Date: 2022-11-07 12:25-0600\n"
+"PO-Revision-Date: 2022-11-07 12:25-0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: hu_HU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: ics-calendar.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: class-r34ics.php:194
+#, php-format
+msgid ""
+"The %1$s plugin requires either the PHP cURL extensions, or the %2$s PHP "
+"setting to be turned on. Please update the settings in your %3$s file or "
+"contact your hosting provider for assistance."
+msgstr ""
+"A %1$s bővítményhez vagy a PHP cURL kiterjesztés, vagy az %2$s PHP beállítás "
+"bekapcsolása szükséges. Kérjük, frissítse a beállításokat a %3$s fájlban, "
+"vagy forduljon a tárhelyszolgáltatójához segítségért."
+
+#: class-r34ics.php:203
+#, php-format
+msgid ""
+"%1$sYour site is currently using a UTC offset-based timezone setting.%2$s "
+"This can produce time display errors in the %3$s plugin in locations that "
+"observe Daylight Saving Time. Please %4$schange your timezone setting%5$s to "
+"the city nearest your location, in the same timezone, for proper time "
+"display. See our %6$sdocumentation%7$s for additional information on this "
+"issue."
+msgstr ""
+"%1$sAz Ön webhelye jelenleg UTC-eltolódáson alapuló időzóna-beállítást "
+"használ.%2$s Ez időmegjelenítési hibákat okozhat a %3$s pluginban azokon a "
+"helyeken, ahol a nyári időszámítást alkalmazzák. Kérjük, %4$s változtassa "
+"meg az időzóna beállítását %5$s az Önhöz legközelebbi, azonos időzónában "
+"lévő városra a megfelelő időmegjelenítés érdekében. További információért "
+"lásd a %6$sdokumentációnkat%7$s."
+
+#: class-r34ics.php:221
+#, php-format
+msgid "Cleared %1$s %2$s transient(s)."
+msgstr "Törölt %1$s %2$s tranziens(ek)."
+
+#: class-r34ics.php:228
+#, php-format
+msgid "No %1$s transients were found."
+msgstr "Nem találtunk %1$s tranzienseket."
+
+#: class-r34ics.php:250 templates/admin/sidebar.php:3
+msgid "User Guide"
+msgstr "Felhasználói kézikönyv"
+
+#: class-r34ics.php:252 templates/admin/sidebar.php:36
+msgid "Upgrade to PRO!"
+msgstr "Frissítsen PRO-ra!"
+
+#: class-r34ics.php:270
+msgid "Show/hide all"
+msgstr "Az összes megjelenítése/elrejtése"
+
+#: class-r34ics.php:533
+msgid ""
+"ICS file could not be retrieved or was empty. Please verify URL is correct, "
+"and check your php.ini configuration to verify either cURL or "
+"allow_url_fopen is available. If you are using spaces to delimit multiple "
+"URLs, you may also wish to try using the pipe character instead. Affected "
+"URL:"
+msgstr ""
+"Az ICS-fájl nem olvasható be, vagy üres. Kérjük, ellenőrizze URL helyes, és "
+"ellenőrizze a php.ini konfiguráció ellenőrzésére vagy cURL vagy "
+"allow_url_fopen áll rendelkezésre. Ha szóközöket használ több URL-karakter "
+"elhatárolódására, akkor érdemes lehet inkább a csőkaraktert használni. "
+"Érintett URL:Affected URL:"
+
+#: class-r34ics.php:700
+msgid "Ends"
+msgstr "Vége"
+
+#: class-r34ics.php:872
+msgid "Hide past events"
+msgstr "Múltbeli események elrejtése"
+
+#: class-r34ics.php:873 templates/calendar-month.php:83
+#: templates/calendar-week.php:80
+msgid "Show past events"
+msgstr "Elmúlt események megjelenítése"
+
+#: class-r34ics.php:955
+msgid "Click for more..."
+msgstr "Kattintson a további ..."
+
+#: class-r34ics.php:988
+msgid "Save to your calendar"
+msgstr "Mentés a naptárba"
+
+#: class-r34ics.php:988
+msgid "Download"
+msgstr "Letöltés"
+
+#: class-r34ics.php:1064
+msgid "Cancelled"
+msgstr "Törölve"
+
+#: class-r34ics.php:1258
+msgid ""
+"The \"currentweek\" shortcode attribute is deprecated. Please use view=\"week"
+"\" in your shortcode instead."
+msgstr ""
+"A \"currentweek\" shortcode attribútum elavult. Kérjük, használja a view="
+"\"week\" elemet a rövid kódjában."
+
+#: class-r34ics.php:1429
+msgid "calendar event"
+msgstr "naptári esemény"
+
+#: functions.php:704
+msgid "Recurring event"
+msgstr "Ismétlődő esemény"
+
+#: functions.php:709
+#, php-format
+msgid "Recurs every %s years"
+msgstr "Ismétlődik minden %s évben"
+
+#: functions.php:709
+msgid "Recurs yearly"
+msgstr "Évente ismétlődik"
+
+#: functions.php:712
+#, php-format
+msgid "Recurs every %s months"
+msgstr "Ismétlődik minden %s hónapban"
+
+#: functions.php:712
+msgid "Recurs monthly"
+msgstr "Havonta ismétlődik"
+
+#: functions.php:715
+#, php-format
+msgid "Recurs every %s weeks"
+msgstr "Ismétlődik minden %s héten"
+
+#: functions.php:715
+msgid "Recurs weekly"
+msgstr "Hetente ismétlődik"
+
+#: functions.php:718
+#, php-format
+msgid "Recurs every %s days"
+msgstr "Ismétlődik minden %s napon"
+
+#: functions.php:718
+msgid "Recurs daily"
+msgstr "Naponta ismétlődik"
+
+#: functions.php:794
+#, php-format
+msgid ""
+"The \"url\" property in your %1$s shortcode appears to contain HTML tags; "
+"most likely your URL has been turned into a clickable link. Your calendar "
+"may not display properly as a result. Please remove the clickable link in "
+"the shortcode."
+msgstr ""
+"A %1$s rövidkód \"url\" tulajdonsága úgy tűnik, hogy HTML-címkéket "
+"tartalmaz; valószínűleg az URL-címet kattintható linkké alakították át. "
+"Ennek következtében előfordulhat, hogy a naptárad nem jelenik meg "
+"megfelelően. Kérjük, távolítsa el a kattintható linket a rövidkódból."
+
+#: functions.php:1015
+msgid "The r34ics_url_get_contents() function is no longer supported."
+msgstr "Az r34ics_url_get_contents() függvény már nem támogatott."
+
+#: ics-calendar.php:76
+#, php-format
+msgid ""
+"Thank you for installing %1$s. Before creating your first calendar "
+"shortcode, please visit your %2$sGeneral Settings%3$s page and verify that "
+"your site language, timezone and date/time format settings are correct. See "
+"our %4$sUser Guide%5$s for more information."
+msgstr ""
+"Köszönjük, hogy telepítette %1$s. Mielőtt létrehozná az első naptár "
+"rövidkódot, kérjük, látogasson el az %2$sÁltalános beállítások%3$s oldalra, "
+"és ellenőrizze, hogy az oldal nyelvi, időzóna és dátum/idő formátum "
+"beállításai megfelelőek-e. További információkért tekintse meg a "
+"%4$sFelhasználói útmutató%5$s-t."
+
+#: templates/admin/add-calendar-button.php:1 templates/admin/add-calendar.php:6
+#, php-format
+msgid "Add %1$s"
+msgstr "%1$s hozzáadása"
+
+#: templates/admin/add-calendar.php:7
+msgid "Close"
+msgstr "Bezár"
+
+#: templates/admin/add-calendar.php:16
+msgid "ICS Feed URL:"
+msgstr "ICS Feed URL:"
+
+#: templates/admin/add-calendar.php:18
+#, php-format
+msgid ""
+"Be sure you are using a %1$ssubscribe%2$s URL, not a %3$sweb view%4$s URL."
+"%5$s (Entering the URL directly in your web browser should download an %6$s "
+"file.)"
+msgstr ""
+"Győződjön meg róla, hogy %1$ssubscribe%2$s URL-t használ, nem pedig %3$sweb "
+"view%4$s URL-t.%5$s (Ha közvetlenül a böngészőbe írja be az URL-t, akkor egy "
+"%6$s fájlt kell letöltenie.)"
+
+#: templates/admin/add-calendar.php:22
+msgid "Calendar Title:"
+msgstr "Naptár címe:"
+
+#: templates/admin/add-calendar.php:24
+#, php-format
+msgid ""
+"Leave empty to use calendar&rsquo;s default title. Enter %1$s to omit title "
+"altogether."
+msgstr ""
+"Hagyja üresen a naptár alapértelmezett címének használatához. A cím teljes "
+"elhagyásához írja be a %1$s-t."
+
+#: templates/admin/add-calendar.php:28
+msgid "Calendar Description:"
+msgstr "Naptár leírása:"
+
+#: templates/admin/add-calendar.php:30
+#, php-format
+msgid ""
+"Leave empty to use calendar&rsquo;s default description. Enter %1$s to omit "
+"description altogether."
+msgstr ""
+"Hagyja üresen a naptár alapértelmezett leírásának használatát. Írja %s, hogy "
+"teljesen kihagyja a leírást."
+
+#: templates/admin/add-calendar.php:34
+msgid "View:"
+msgstr "Nézet:"
+
+#: templates/admin/add-calendar.php:36
+msgid "month"
+msgstr "hónap"
+
+#: templates/admin/add-calendar.php:37
+msgid "list"
+msgstr "lista"
+
+#: templates/admin/add-calendar.php:38
+msgid "week"
+msgstr "hét"
+
+#: templates/admin/add-calendar.php:43 templates/admin/add-calendar.php:48
+msgid "Count:"
+msgstr "Számláló:"
+
+#: templates/admin/add-calendar.php:46 templates/admin/add-calendar.php:48
+msgid "Format:"
+msgstr "Formátum:"
+
+#: templates/admin/add-calendar.php:48
+#, php-format
+msgid ""
+"Leave %1$s blank to include all upcoming events. %2$s must be a standard "
+"%3$sPHP date format string%4$s."
+msgstr ""
+"Hagyja üresen a %1$s-t, ha az összes közelgő eseményt be kívánja vonni. %2$s "
+"egy szabványos %3$sPHP dátumformátumú karakterlánc%4$s."
+
+#: templates/admin/add-calendar.php:53
+#, php-format
+msgid ""
+"Show event descriptions %1$s(change to a number in inserted shortcode to set "
+"word limit)%2$s"
+msgstr ""
+"Eseményleírások megjelenítése %1$s(a beillesztett rövidkódban számra "
+"változtatható a szóhatár beállításához)%2$s"
+
+#: templates/admin/add-calendar.php:58
+#, php-format
+msgid "Show event locations %1$s(if available)%2$s"
+msgstr "Eseményhelyszínek megjelenítése %1$s(ha van)%2$s"
+
+#: templates/admin/add-calendar.php:63
+#, php-format
+msgid "Show event organizers %1$s(if available)%2$s"
+msgstr "Eseményszervezők megjelenítése %1$s(ha van)%2$s"
+
+#: templates/admin/add-calendar.php:67
+#, php-format
+msgid ""
+"%1$sNote:%2$s Additional %3$sdisplay options%4$s are available by manually "
+"editing the shortcode after insertion."
+msgstr ""
+"%1$sMegjegyzés:%2$s További %3$smegjelenítési lehetőségek%4$s a rövidkód "
+"beszúrása utáni kézi szerkesztéssel érhetők el."
+
+#: templates/admin/add-calendar.php:71
+#, php-format
+msgid "Insert %1$s"
+msgstr "Insert %1$s"
+
+#: templates/admin/admin.php:15
+msgid "Basic Shortcode Example"
+msgstr "Példa egyszerű shortcode-kódra"
+
+#: templates/admin/admin.php:19
+#, php-format
+msgid ""
+"To insert an %1$s in a page, use the following shortcode format, replacing "
+"the all-caps text with your feed URL. Many additional customization options "
+"are available. Please see the %2$sUser Guide%3$s for details."
+msgstr ""
+"Ha %1$s-t szeretne beszúrni egy oldalra, használja a következő rövidkód "
+"formátumot, és a csupa nagybetűs szöveget helyettesítse a takarmány URL-"
+"címével. Számos további testreszabási lehetőség áll rendelkezésre. A "
+"részleteket lásd a %2$sFelhasználói útmutatóban%3$s."
+
+#: templates/admin/admin.php:37
+msgid "System Report"
+msgstr "Rendszerjelentés"
+
+#: templates/admin/admin.php:41
+msgid ""
+"Please copy the following text and include it in your message when emailing "
+"support."
+msgstr ""
+"Kérjük, másolja a következő szöveget, és vegye fel az üzenetbe, amikor e-"
+"mailt küld a támogatásnak."
+
+#: templates/admin/admin.php:42
+#, php-format
+msgid ""
+"Also please include the %1$s shortcode exactly as you have it entered on the "
+"affected page."
+msgstr ""
+"Kérjük, hogy a %1$s rövidkódot is pontosan úgy adja meg, ahogyan azt az "
+"érintett oldalon beírta."
+
+#: templates/admin/sidebar.php:5
+msgid ""
+"Our complete user guide is now available with full translation into dozens "
+"of languages on our website:"
+msgstr ""
+"Teljes felhasználói útmutatónk már elérhető teljes fordítással több tucat "
+"nyelvre honlapunkon:"
+
+#: templates/admin/sidebar.php:7
+msgid "Support"
+msgstr "Támogatás"
+
+#: templates/admin/sidebar.php:9
+#, php-format
+msgid ""
+"For support please email %1$s or use the %2$sWordPress Support Forums%3$s."
+msgstr ""
+"Támogatásért kérjük, írjon e-mailt %1$s vagy használja a %2$sWordPress "
+"támogatási fórumokat%3$s."
+
+#: templates/admin/sidebar.php:11
+msgid "Additional Resources"
+msgstr "További források"
+
+#: templates/admin/sidebar.php:13
+msgid "ICS documentation and tools:"
+msgstr "ICS dokumentáció és eszközök:"
+
+#: templates/admin/sidebar.php:17
+msgid "ICS Parser at GitHub"
+msgstr "ICS-Naptár"
+
+#: templates/admin/sidebar.php:18
+msgid "iCal Validator"
+msgstr "iCal érvényesítő"
+
+#: templates/admin/sidebar.php:19
+msgid "Recurrence Rule Tester"
+msgstr "Ismétlődési szabálytesztelő"
+
+#: templates/admin/sidebar.php:23
+msgid "Miscellaneous reference and tools:"
+msgstr "Egyéb hivatkozások és eszközök:"
+
+#: templates/admin/sidebar.php:27
+msgid "HTML Color Picker"
+msgstr "HTML színválasztó"
+
+#: templates/admin/sidebar.php:28
+msgid "Unix Timestamp Converter"
+msgstr "Unix időbélyeg konverter"
+
+#: templates/admin/sidebar.php:37
+#, php-format
+msgid ""
+"Features include additional views (month-with-sidebar, year-with-sidebar, "
+"sidebar widget, and conference schedule grid view), a Calendar Builder with "
+"save feature for full management of calendar settings without manually "
+"editing the shortcode, Customizer options to easily modify the "
+"calendar&rsquo;s appearance, advanced features like regular expressions, and "
+"more! Visit %s to learn more."
+msgstr ""
+"Funkciók közé tartozik a további nézetek (hónap-with-sidebar, év-with-"
+"sidebar widget, és a konferencia ütemezése rács nézet), a Naptár Builder "
+"mentési funkció teljes kezelése naptár beállítások nélkül manuálisan "
+"szerkeszti a shortcode, Testreszabó lehetőségek könnyen módosíthatja a "
+"naptár megjelenését, fejlett funkciók, mint a reguláris kifejezések, és így "
+"tovább! Látogasson %s, hogy többet tudjon meg."
+
+#: templates/admin/sidebar.php:43
+msgid "Thank You!"
+msgstr "Köszönjük!"
+
+#: templates/admin/sidebar.php:44
+#, php-format
+msgid ""
+"This plugin is free to use. If you find it to be of value, we welcome your "
+"donation (suggested amount: US $9), to help fund future development, or get "
+"the advanced features of the %1$sPRO version%2$s for just US $29/year."
+msgstr ""
+"Ez a plugin szabadon használható. Ha értékesnek találja, örömmel fogadjuk "
+"adományát (javasolt összeg: US $ 9), hogy segítsen finanszírozni a jövőbeni "
+"fejlesztéseket, vagy megkapja a %1$sPRO verzió fejlett funkcióit%2$s csak "
+"évi 29 dollárért."
+
+#: templates/admin/sidebar.php:46
+msgid "Make a Donation"
+msgstr "Készíts egy adományt"
+
+#: templates/admin/sidebar.php:46
+msgid "Go PRO!"
+msgstr "Menj PRO!"
+
+#: templates/admin/utilities.php:1
+msgid "Utilities"
+msgstr "Segédprogramok"
+
+#: templates/admin/utilities.php:9
+msgid "Clear Cached Calendar Data"
+msgstr "Gyorsítótárazott naptáradatok törlése"
+
+#: templates/admin/utilities.php:10
+msgid ""
+"This will immediately clear all existing cached calendar data (purge "
+"transients), forcing WordPress to reload all calendars the next time they "
+"are viewed. Caching will then resume as before."
+msgstr ""
+"Ez azonnal törli az összes meglévő gyorsítótárazott naptáradatot "
+"(tranzienseket töröl), arra kényszerítve a WordPress-t, hogy a következő "
+"megtekintéskor töltse újra az összes naptárat. A caching ezután folytatódik, "
+"mint korábban."
+
+#: templates/admin/utilities.php:17
+msgid "ICS Feed URL Tester"
+msgstr "ICS-hírcsatorna URL-tesztelője"
+
+#: templates/admin/utilities.php:21
+msgid ""
+"If you are concerned that the plugin is not properly retrieving your feed, "
+"you can test the URL here. The raw data received by the plugin will be "
+"displayed below."
+msgstr ""
+"Ha aggódik amiatt, hogy a plugin nem megfelelően lekéri a hírcsatornát, itt "
+"tesztelheti az URL-t. A plugin által kapott nyers adatok az alábbiakban "
+"jelennek meg."
+
+#: templates/admin/utilities.php:28
+msgid "Enter feed URL..."
+msgstr "Adja meg a hírcsatorna URL-címét..."
+
+#: templates/admin/utilities.php:28
+msgid "Test URL"
+msgstr "Teszt URL-címe"
+
+#: templates/admin/utilities.php:35
+#, php-format
+msgid "%s received."
+msgstr "%s érkezett."
+
+#: templates/admin/utilities.php:39
+msgid "This does not appear to be a valid ICS feed URL."
+msgstr "Úgy tűnik, hogy ez nem egy érvényes ICS feed URL."
+
+#: templates/admin/utilities.php:48
+msgid "Could not retrieve data from the requested URL."
+msgstr "Nem lehetett adatokat lekérni a kért URL-címről."
+
+#: templates/admin/utilities.php:53
+msgid ""
+"An unknown error occurred while attempting to retrieve the requested URL."
+msgstr "Ismeretlen hiba történt a kért URL lekérése közben."
+
+#: templates/calendar-list.php:43
+msgid "No events found."
+msgstr "Nem található esemény."
+
+#: templates/calendar-list.php:247 templates/calendar-month.php:191
+#: templates/calendar-week.php:204
+msgid "All Day"
+msgstr "Egész nap"
+
+#: templates/calendar-month.php:273 templates/calendar-week.php:289
+msgid "No events."
+msgstr "Nincsenek események."
+
+#: templates/calendar-month.php:285
+msgid "No additional events this month."
+msgstr "Ebben a hónapban nincs további esemény."
+
+#: templates/calendar-week.php:70
+msgid "Last week"
+msgstr "Múlt héten"
+
+#: templates/calendar-week.php:71
+msgid "This week"
+msgstr "Ezen a héten"
+
+#: templates/calendar-week.php:72
+msgid "Next week"
+msgstr "Következő héten"
+
+#. Plugin Name of the plugin/theme
+msgid "ICS Calendar"
+msgstr "ICS Calendar"
+
+#. Description of the plugin/theme
+msgid "Embed a live updating iCal (ICS) feed in any page using a shortcode."
+msgstr ""
+"Beágyaz egy élő frissítő iCal (ICS) betáplálást bármelyik oldalon egy rövid "
+"kód használatával."
+
+#. Author of the plugin/theme
+msgid "Room 34 Creative Services, LLC"
+msgstr "Room 34 Creative Services, LLC"
+
+#. Author URI of the plugin/theme
+msgid "https://icscalendar.com"
+msgstr "https://icscalendar.com"
+
+#~ msgid "Add ICS Calendar"
+#~ msgstr "ICS-Naptár"
+
+#~ msgid "Your site is currently using a UTC offset-based timezone setting."
+#~ msgstr "A webhely jelenleg UTC-eltoláson alapuló időzónát használ."
+
+#, php-format
+#~ msgid ""
+#~ "This can produce time display errors in the %s plugin in locations that "
+#~ "observe Daylight Saving Time."
+#~ msgstr ""
+#~ "Ez időmegjelenítési hibákat okozhat a %s olyan helyeken, amelyek "
+#~ "megfigyelik a nyári időszámítást."
+
+#, php-format
+#~ msgid ""
+#~ "Please %1$schange your timezone setting%2$s to the city nearest your "
+#~ "location, in the same timezone, for proper time display."
+#~ msgstr ""
+#~ "Kérjük, %1$sa megfelelő időkijelenítés érdekében %1$sa helyéhez "
+#~ "legközelebb lévő városba%2$s, ugyanabban az időzónában váltsa át az "
+#~ "időzónát."
+
+#, php-format
+#~ msgid ""
+#~ "See the %1$sPHP documentation%2$s for additional information on this "
+#~ "issue."
+#~ msgstr ""
+#~ "A problémával kapcsolatos további információkért tekintse meg a %1$sPHP "
+#~ "dokumentációt%2$s."
+
+#~ msgid "Thank you for upgrading to ICS Calendar version 7.0!"
+#~ msgstr "Köszönjük, hogy frissített az ICS Naptár 7.0-s verziójára!"
+
+#, php-format
+#~ msgid ""
+#~ "%sPlease note that this version includes a major rewrite of the logic for "
+#~ "formatting event dates and times.%s We have made every effort to ensure "
+#~ "that the new functionality is stable and reliable, but if you encounter "
+#~ "any issues, such as incorrect dates and times, headers displaying the "
+#~ "wrong month, or page layout issues, please contact us at %s and we will "
+#~ "assist you as quickly as possible. Please include the contents of the "
+#~ "%sSystem Report%s in your email."
+#~ msgstr ""
+#~ "%s Kérjük, vegye figyelembe, hogy ez a verzió az eseménydátumok és -"
+#~ "időpontok formázási logikájának jelentős átírását tartalmazza. %s Mindent "
+#~ "megtettünk annak érdekében, hogy az új funkció stabil és megbízható "
+#~ "legyen, de ha bármilyen problémába ütközik, például helytelen dátumok és "
+#~ "időpontok, a rossz hónapot megjelenítő fejlécek vagy az oldalelrendezési "
+#~ "problémák, kérjük, lépjen kapcsolatba velünk a %s-ben, és mi a lehető "
+#~ "leggyorsabban segítünk Önnek. Kérjük, tetssze %s Rendszerjelentés %s e-"
+#~ "mailben."
+
+#~ msgid ""
+#~ "No events found in ICS feed(s). This may mean your calendar contains no "
+#~ "events, your feed URL may be incorrect, or your shortcode may have other "
+#~ "configuration errors. Set debug=\"true\" in shortcode for additional "
+#~ "details."
+#~ msgstr ""
+#~ "Nem található esemény az ICS-hírcsatornákban. Ez azt jelentheti, hogy a "
+#~ "naptár nem tartalmaz eseményeket, a hírcsatorna URL-címe helytelen lehet, "
+#~ "vagy a shortcode más konfigurációs hibákat is okozhat. Set debug=\"true\" "
+#~ "in shortcode for additional details."

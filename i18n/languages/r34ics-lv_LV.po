@@ -1,0 +1,577 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ICS Calendar\n"
+"POT-Creation-Date: 2022-11-07 12:30-0600\n"
+"PO-Revision-Date: 2022-11-07 12:31-0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: lv_LV\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==0 || (n%100>=11 && n%100<=19) ? 0 : n"
+"%10==1 && n%100!=11 ? 1 : 2);\n"
+"X-Generator: Poedit 3.2\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: ics-calendar.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: class-r34ics.php:194
+#, php-format
+msgid ""
+"The %1$s plugin requires either the PHP cURL extensions, or the %2$s PHP "
+"setting to be turned on. Please update the settings in your %3$s file or "
+"contact your hosting provider for assistance."
+msgstr ""
+"Lai izmantotu %1$s spraudni, ir jābūt ieslēgtam PHP cURL paplašinājumam vai "
+"%2$s PHP iestatījumam. Lūdzu, atjauniniet iestatījumus savā %3$s failā vai "
+"sazinieties ar savu hostinga pakalpojumu sniedzēju, lai saņemtu palīdzību."
+
+#: class-r34ics.php:203
+#, php-format
+msgid ""
+"%1$sYour site is currently using a UTC offset-based timezone setting.%2$s "
+"This can produce time display errors in the %3$s plugin in locations that "
+"observe Daylight Saving Time. Please %4$schange your timezone setting%5$s to "
+"the city nearest your location, in the same timezone, for proper time "
+"display. See our %6$sdocumentation%7$s for additional information on this "
+"issue."
+msgstr ""
+"%1$sJūsu vietnē pašlaik tiek izmantots laika joslas iestatījums, kas "
+"balstīts uz UTC nobīdi.%2$s Tas var radīt laika rādīšanas kļūdas %3$s "
+"spraudnis vietās, kur tiek ievērots vasaras laiks. Lūdzu, %4$smainiet laika "
+"joslas iestatījumu%5$s uz jums tuvāko pilsētu tajā pašā laika joslā, lai "
+"pareizi parādītu laiku. Papildu informāciju par šo jautājumu skatiet mūsu "
+"%6$sdokumentācijā%7$s."
+
+#: class-r34ics.php:221
+#, php-format
+msgid "Cleared %1$s %2$s transient(s)."
+msgstr "Notīrīts %1$s %2$s pārejošais(-ie) process(-i)."
+
+#: class-r34ics.php:228
+#, php-format
+msgid "No %1$s transients were found."
+msgstr "Netika atrasti %1$s pārejas procesi."
+
+#: class-r34ics.php:250 templates/admin/sidebar.php:3
+msgid "User Guide"
+msgstr "Lietotāja pamācība"
+
+#: class-r34ics.php:252 templates/admin/sidebar.php:36
+msgid "Upgrade to PRO!"
+msgstr "Jauniniet uz PRO!"
+
+#: class-r34ics.php:270
+msgid "Show/hide all"
+msgstr "Rādīt/paslēpt visu"
+
+#: class-r34ics.php:533
+msgid ""
+"ICS file could not be retrieved or was empty. Please verify URL is correct, "
+"and check your php.ini configuration to verify either cURL or "
+"allow_url_fopen is available. If you are using spaces to delimit multiple "
+"URLs, you may also wish to try using the pipe character instead. Affected "
+"URL:"
+msgstr ""
+"ICS failu nevarēja izgūt vai tas bija tukšs. Lūdzu, pārbaudiet, vai URL ir "
+"pareizs, un pārbaudiet php .ini konfigurāciju, lai pārbaudītu, vai ir "
+"pieejams allow_url_fopen vai url. Ja izmantojat atstarpes, lai norobežotu "
+"vairākus vietrāžus URL, iespējams, vēlēsieties arī mēģināt izmantot caurules "
+"rakstzīmi. Ietekmētais URL:"
+
+#: class-r34ics.php:700
+msgid "Ends"
+msgstr "Beidzas"
+
+#: class-r34ics.php:872
+msgid "Hide past events"
+msgstr "Paslēpt pagātnes notikumus"
+
+#: class-r34ics.php:873 templates/calendar-month.php:83
+#: templates/calendar-week.php:80
+msgid "Show past events"
+msgstr "Rādīt pagātnes notikumus"
+
+#: class-r34ics.php:955
+msgid "Click for more..."
+msgstr "Noklikšķiniet, lai uzzinātu vairāk..."
+
+#: class-r34ics.php:988
+msgid "Save to your calendar"
+msgstr "Saglabāt kalendārā"
+
+#: class-r34ics.php:988
+msgid "Download"
+msgstr "Lejupielādēt"
+
+#: class-r34ics.php:1064
+msgid "Cancelled"
+msgstr "Atcelts"
+
+#: class-r34ics.php:1258
+msgid ""
+"The \"currentweek\" shortcode attribute is deprecated. Please use view=\"week"
+"\" in your shortcode instead."
+msgstr ""
+"\"Currentweek\" īsā koda atribūts ir novecojis. Tā vietā, lūdzu, izmantojiet "
+"view=\"week\" savā īsajā kodā."
+
+#: class-r34ics.php:1429
+msgid "calendar event"
+msgstr "kalendāra notikums"
+
+#: functions.php:704
+msgid "Recurring event"
+msgstr "Periodisks notikums"
+
+#: functions.php:709
+#, php-format
+msgid "Recurs every %s years"
+msgstr "Atkārtojas ik pēc %s gadiem"
+
+#: functions.php:709
+msgid "Recurs yearly"
+msgstr "Atkārtojas katru gadu"
+
+#: functions.php:712
+#, php-format
+msgid "Recurs every %s months"
+msgstr "Atkārtojas ik pēc %s mēnešiem"
+
+#: functions.php:712
+msgid "Recurs monthly"
+msgstr "Atkārtojas katru mēnesi"
+
+#: functions.php:715
+#, php-format
+msgid "Recurs every %s weeks"
+msgstr "Atkārtojas ik pēc %s nedēļām"
+
+#: functions.php:715
+msgid "Recurs weekly"
+msgstr "Atkārtojas katru nedēļu"
+
+#: functions.php:718
+#, php-format
+msgid "Recurs every %s days"
+msgstr "Atkārtojas ik pēc %s dienām"
+
+#: functions.php:718
+msgid "Recurs daily"
+msgstr "Atkārtojas katru dienu"
+
+#: functions.php:794
+#, php-format
+msgid ""
+"The \"url\" property in your %1$s shortcode appears to contain HTML tags; "
+"most likely your URL has been turned into a clickable link. Your calendar "
+"may not display properly as a result. Please remove the clickable link in "
+"the shortcode."
+msgstr ""
+"Šķiet, ka jūsu %1$s īskoda īpašība \"url\" satur HTML tagus; visticamāk, "
+"jūsu URL ir pārvērsts par klikšķināmu saiti. Rezultātā jūsu kalendārs var "
+"netikt pareizi parādīts. Lūdzu, noņemiet klikšķināmo saiti īsajā kodā."
+
+#: functions.php:1015
+msgid "The r34ics_url_get_contents() function is no longer supported."
+msgstr "Funkcija r34ics_url_get_contents() vairs netiek atbalstīta."
+
+#: ics-calendar.php:76
+#, php-format
+msgid ""
+"Thank you for installing %1$s. Before creating your first calendar "
+"shortcode, please visit your %2$sGeneral Settings%3$s page and verify that "
+"your site language, timezone and date/time format settings are correct. See "
+"our %4$sUser Guide%5$s for more information."
+msgstr ""
+"Paldies par instalēšanu %1$s. Pirms izveidojat savu pirmo kalendāra īskodu, "
+"lūdzu, apmeklējiet savu %2$sVispārīgie iestatījumi%3$s lapu un pārbaudiet, "
+"vai jūsu vietnes valodas, laika joslas un datuma/laika formāta iestatījumi "
+"ir pareizi. Lai iegūtu vairāk informācijas, skatiet mūsu %4$sLietotāja "
+"rokasgrāmatu%5$s."
+
+#: templates/admin/add-calendar-button.php:1 templates/admin/add-calendar.php:6
+#, php-format
+msgid "Add %1$s"
+msgstr "Pievienot %1$s"
+
+#: templates/admin/add-calendar.php:7
+msgid "Close"
+msgstr "Aizvērt"
+
+#: templates/admin/add-calendar.php:16
+msgid "ICS Feed URL:"
+msgstr "ICS Feed URL:"
+
+#: templates/admin/add-calendar.php:18
+#, php-format
+msgid ""
+"Be sure you are using a %1$ssubscribe%2$s URL, not a %3$sweb view%4$s URL."
+"%5$s (Entering the URL directly in your web browser should download an %6$s "
+"file.)"
+msgstr ""
+"Pārliecinieties, ka izmantojat %1$sabonēšanas%2$s URL, nevis %3$stīmekļa "
+"skatīšanas%4$s URL%5$s (ievadot URL tieši tīmekļa pārlūkprogrammā, "
+"jālejupielādē %6$s fails.)"
+
+#: templates/admin/add-calendar.php:22
+msgid "Calendar Title:"
+msgstr "Kalendāra nosaukums:"
+
+#: templates/admin/add-calendar.php:24
+#, php-format
+msgid ""
+"Leave empty to use calendar&rsquo;s default title. Enter %1$s to omit title "
+"altogether."
+msgstr ""
+"Atstājiet tukšu, lai izmantotu kalendāra noklusējuma nosaukumu. Ievadiet "
+"%1$s, lai vispār izlaistu nosaukumu."
+
+#: templates/admin/add-calendar.php:28
+msgid "Calendar Description:"
+msgstr "Kalendārs Apraksts:"
+
+#: templates/admin/add-calendar.php:30
+#, php-format
+msgid ""
+"Leave empty to use calendar&rsquo;s default description. Enter %1$s to omit "
+"description altogether."
+msgstr ""
+"Atstājiet tukšu, lai izmantotu kalendāra noklusējuma aprakstu. Ievadiet "
+"%1$s, lai aprakstu vispār neievietotu."
+
+#: templates/admin/add-calendar.php:34
+msgid "View:"
+msgstr "Skats:"
+
+#: templates/admin/add-calendar.php:36
+msgid "month"
+msgstr "mēnesis"
+
+#: templates/admin/add-calendar.php:37
+msgid "list"
+msgstr "saraksts"
+
+#: templates/admin/add-calendar.php:38
+msgid "week"
+msgstr "nedēļa"
+
+#: templates/admin/add-calendar.php:43 templates/admin/add-calendar.php:48
+msgid "Count:"
+msgstr "Skaitīt:"
+
+#: templates/admin/add-calendar.php:46 templates/admin/add-calendar.php:48
+msgid "Format:"
+msgstr "Formāts:"
+
+#: templates/admin/add-calendar.php:48
+#, php-format
+msgid ""
+"Leave %1$s blank to include all upcoming events. %2$s must be a standard "
+"%3$sPHP date format string%4$s."
+msgstr ""
+"Atstājiet %1$s tukšu, lai iekļautu visus gaidāmos notikumus. %2$s jābūt "
+"standarta %3$sPHP datuma formāta virknei%4$s."
+
+#: templates/admin/add-calendar.php:53
+#, php-format
+msgid ""
+"Show event descriptions %1$s(change to a number in inserted shortcode to set "
+"word limit)%2$s"
+msgstr ""
+"Rādīt notikumu aprakstus %1$s(mainīt uz numuru ievietotajā īsajā kodā, lai "
+"iestatītu vārdu ierobežojumu)%2$s"
+
+#: templates/admin/add-calendar.php:58
+#, php-format
+msgid "Show event locations %1$s(if available)%2$s"
+msgstr "Rādīt notikumu atrašanās vietas %1$s(ja pieejams)%2$s"
+
+#: templates/admin/add-calendar.php:63
+#, php-format
+msgid "Show event organizers %1$s(if available)%2$s"
+msgstr "Rādīt notikuma organizatorus %1$s(ja pieejams)%2$s"
+
+#: templates/admin/add-calendar.php:67
+#, php-format
+msgid ""
+"%1$sNote:%2$s Additional %3$sdisplay options%4$s are available by manually "
+"editing the shortcode after insertion."
+msgstr ""
+"%1$sPiezīme:%2$s Papildu %3$sdispleja opcijas%4$s ir pieejamas, manuāli "
+"rediģējot īso kodu pēc ievietošanas."
+
+#: templates/admin/add-calendar.php:71
+#, php-format
+msgid "Insert %1$s"
+msgstr "Ievietot %1$s"
+
+#: templates/admin/admin.php:15
+msgid "Basic Shortcode Example"
+msgstr "Pamata īsā koda piemērs"
+
+#: templates/admin/admin.php:19
+#, php-format
+msgid ""
+"To insert an %1$s in a page, use the following shortcode format, replacing "
+"the all-caps text with your feed URL. Many additional customization options "
+"are available. Please see the %2$sUser Guide%3$s for details."
+msgstr ""
+"Lai ievietojiet %1$s lapā, izmantojiet šādu īskoda formātu, aizstājot tekstu "
+"ar lielajām burtnīcām ar barības URL. Ir pieejamas daudzas papildu "
+"pielāgošanas iespējas. Sīkāku informāciju skatiet %2$sLietotāja rokasgrāmatā"
+"%3$s."
+
+#: templates/admin/admin.php:37
+msgid "System Report"
+msgstr "Sistēmas atskaite"
+
+#: templates/admin/admin.php:41
+msgid ""
+"Please copy the following text and include it in your message when emailing "
+"support."
+msgstr ""
+"Lūdzu, nokopējiet šo tekstu un iekļaujiet to savā ziņojumā, nosūtot e-pasta "
+"ziņojumu atbalsta dienestu."
+
+#: templates/admin/admin.php:42
+#, php-format
+msgid ""
+"Also please include the %1$s shortcode exactly as you have it entered on the "
+"affected page."
+msgstr ""
+"Lūdzu, iekļaujiet arī %1$s īso kodu tieši tā, kā tas ir ievadīts attiecīgajā "
+"lapā."
+
+#: templates/admin/sidebar.php:5
+msgid ""
+"Our complete user guide is now available with full translation into dozens "
+"of languages on our website:"
+msgstr ""
+"Mūsu pilna lietotāja rokasgrāmata tagad ir pieejama ar pilnu tulkojumu "
+"desmitiem valodās mūsu mājas lapā:"
+
+#: templates/admin/sidebar.php:7
+msgid "Support"
+msgstr "Atbalsts"
+
+#: templates/admin/sidebar.php:9
+#, php-format
+msgid ""
+"For support please email %1$s or use the %2$sWordPress Support Forums%3$s."
+msgstr ""
+"Lai saņemtu atbalstu, lūdzu, rakstiet %1$s vai izmantojiet %2$sWordPress "
+"atbalsta forumus%3$s."
+
+#: templates/admin/sidebar.php:11
+msgid "Additional Resources"
+msgstr "Papildu resursi"
+
+#: templates/admin/sidebar.php:13
+msgid "ICS documentation and tools:"
+msgstr "ICS dokumentācija un rīki:"
+
+#: templates/admin/sidebar.php:17
+msgid "ICS Parser at GitHub"
+msgstr "ICS parsētājs GitHub"
+
+#: templates/admin/sidebar.php:18
+msgid "iCal Validator"
+msgstr "iCal validators"
+
+#: templates/admin/sidebar.php:19
+msgid "Recurrence Rule Tester"
+msgstr "Atkārtošanās kārtulas pārbaudītājs"
+
+#: templates/admin/sidebar.php:23
+msgid "Miscellaneous reference and tools:"
+msgstr "Dažādi uzziņas un rīki:"
+
+#: templates/admin/sidebar.php:27
+msgid "HTML Color Picker"
+msgstr "HTML krāsu izvēle"
+
+#: templates/admin/sidebar.php:28
+msgid "Unix Timestamp Converter"
+msgstr "Unix laikspiedola pārveidotājs"
+
+#: templates/admin/sidebar.php:37
+#, php-format
+msgid ""
+"Features include additional views (month-with-sidebar, year-with-sidebar, "
+"sidebar widget, and conference schedule grid view), a Calendar Builder with "
+"save feature for full management of calendar settings without manually "
+"editing the shortcode, Customizer options to easily modify the "
+"calendar&rsquo;s appearance, advanced features like regular expressions, and "
+"more! Visit %s to learn more."
+msgstr ""
+"Līdzekļi ietver papildu skatus (mēnesi ar sānjoslu, gadu ar sānjoslu, "
+"sānjoslas logrīku un konferenču grafika režģa skatu), kalendāra veidotāju ar "
+"saglabāšanas funkciju kalendāra iestatījumu pilnīgai pārvaldībai, manuāli "
+"neautorģiski neveiktu īso kodu, pielāgotāja opcijas, lai viegli modificētu "
+"kalendāra izskatu, papildu funkcijas, piemēram, parastās izteiksmes, un "
+"daudz ko citu! Apmeklējiet %s, lai uzzinātu vairāk."
+
+#: templates/admin/sidebar.php:43
+msgid "Thank You!"
+msgstr "Paldies!"
+
+#: templates/admin/sidebar.php:44
+#, php-format
+msgid ""
+"This plugin is free to use. If you find it to be of value, we welcome your "
+"donation (suggested amount: US $9), to help fund future development, or get "
+"the advanced features of the %1$sPRO version%2$s for just US $29/year."
+msgstr ""
+"Šo spraudni var brīvi izmantot. Ja konstatējat, ka tas ir vērtīgs, mēs "
+"atzinīgi vērtējam jūsu ziedojumu (ieteicamā summa: ASV $ 9), lai palīdzētu "
+"finansēt turpmāko attīstību vai iegūtu %1$sPRO versijas uzlabotās funkcijas"
+"%2$s tikai par USD 29 / gadā."
+
+#: templates/admin/sidebar.php:46
+msgid "Make a Donation"
+msgstr "Ziedojuma sveiciet"
+
+#: templates/admin/sidebar.php:46
+msgid "Go PRO!"
+msgstr "Ej PRO!"
+
+#: templates/admin/utilities.php:1
+msgid "Utilities"
+msgstr "Utilītas"
+
+#: templates/admin/utilities.php:9
+msgid "Clear Cached Calendar Data"
+msgstr "Notīrīt kešotos kalendāra datus"
+
+#: templates/admin/utilities.php:10
+msgid ""
+"This will immediately clear all existing cached calendar data (purge "
+"transients), forcing WordPress to reload all calendars the next time they "
+"are viewed. Caching will then resume as before."
+msgstr ""
+"Tas nekavējoties nodzēsīs visus esošos kešatmiņā saglabātos kalendāra datus "
+"(iztīriet pagaidu datus), liekot WordPress pārlādēt visus kalendārus "
+"nākamajā skatīšanas reizē. Kešdarīšana pēc tam atsāksies kā līdz šim."
+
+#: templates/admin/utilities.php:17
+msgid "ICS Feed URL Tester"
+msgstr "ICS plūsmas URL testētājs"
+
+#: templates/admin/utilities.php:21
+msgid ""
+"If you are concerned that the plugin is not properly retrieving your feed, "
+"you can test the URL here. The raw data received by the plugin will be "
+"displayed below."
+msgstr ""
+"Ja uztraucaties, ka spraudnis nepareizi izgūst plūsmu, varat pārbaudīt "
+"vietrādi URL šeit. Spraudņa saņemtie izejas dati tiks parādīti zemāk."
+
+#: templates/admin/utilities.php:28
+msgid "Enter feed URL..."
+msgstr "Ievadiet plūsmas URL..."
+
+#: templates/admin/utilities.php:28
+msgid "Test URL"
+msgstr "Testa URL"
+
+#: templates/admin/utilities.php:35
+#, php-format
+msgid "%s received."
+msgstr "%s saņemts."
+
+#: templates/admin/utilities.php:39
+msgid "This does not appear to be a valid ICS feed URL."
+msgstr "Šķiet, ka šis nav derīgs ICS barības URL."
+
+#: templates/admin/utilities.php:48
+msgid "Could not retrieve data from the requested URL."
+msgstr "Nevarēja izgūt datus no pieprasītā URL."
+
+#: templates/admin/utilities.php:53
+msgid ""
+"An unknown error occurred while attempting to retrieve the requested URL."
+msgstr "Mēģinot izgūt pieprasīto URL, radās nezināma kļūda."
+
+#: templates/calendar-list.php:43
+msgid "No events found."
+msgstr "Nav atrasts neviens notikums."
+
+#: templates/calendar-list.php:247 templates/calendar-month.php:191
+#: templates/calendar-week.php:204
+msgid "All Day"
+msgstr "Visu dienu"
+
+#: templates/calendar-month.php:273 templates/calendar-week.php:289
+msgid "No events."
+msgstr "Nav notikumu."
+
+#: templates/calendar-month.php:285
+msgid "No additional events this month."
+msgstr "Šomēnes nav papildu notikumu."
+
+#: templates/calendar-week.php:70
+msgid "Last week"
+msgstr "Viņnedēļ"
+
+#: templates/calendar-week.php:71
+msgid "This week"
+msgstr "Šonedēļ"
+
+#: templates/calendar-week.php:72
+msgid "Next week"
+msgstr "Nākamā nedēļa"
+
+#. Plugin Name of the plugin/theme
+msgid "ICS Calendar"
+msgstr "ICS Calendar"
+
+#. Description of the plugin/theme
+msgid "Embed a live updating iCal (ICS) feed in any page using a shortcode."
+msgstr ""
+"Ieguliet tiešraides atjaunināšanas iCal (ICS) plūsmu jebkurā lapā, "
+"izmantojot īso kodu."
+
+#. Author of the plugin/theme
+msgid "Room 34 Creative Services, LLC"
+msgstr "Room 34 Creative Services, LLC"
+
+#. Author URI of the plugin/theme
+msgid "https://icscalendar.com"
+msgstr "https://icscalendar.com"
+
+#~ msgid "Add ICS Calendar"
+#~ msgstr "Pievienot ICS kalendāru"
+
+#~ msgid "Your site is currently using a UTC offset-based timezone setting."
+#~ msgstr "Jūsu vietne pašlaik izmanto UTC nobīdes laika joslas iestatījumu."
+
+#, php-format
+#~ msgid ""
+#~ "This can produce time display errors in the %s plugin in locations that "
+#~ "observe Daylight Saving Time."
+#~ msgstr ""
+#~ "Tas var radīt laika displeja kļūdas %s vietās, kas ievēro vasaras laiku."
+
+#, php-format
+#~ msgid ""
+#~ "Please %1$schange your timezone setting%2$s to the city nearest your "
+#~ "location, in the same timezone, for proper time display."
+#~ msgstr ""
+#~ "Lūdzu, %1$smaizmaiņas laika joslas iestatījumu%2$s uz pilsētu, kas "
+#~ "atrodas vistuvāk jūsu atrašanās vietai, tajā pašā laika joslā, lai "
+#~ "nodrošinātu pareizu laika parādīšanu."
+
+#, php-format
+#~ msgid ""
+#~ "See the %1$sPHP documentation%2$s for additional information on this "
+#~ "issue."
+#~ msgstr ""
+#~ "Papildinformāciju par šo jautājumu skatiet %1$sPHP dokumentācijā%2$s."

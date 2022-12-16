@@ -1,0 +1,621 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ICS Calendar\n"
+"POT-Creation-Date: 2022-11-07 12:26-0600\n"
+"PO-Revision-Date: 2022-11-07 12:27-0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: ics-calendar.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: class-r34ics.php:194
+#, php-format
+msgid ""
+"The %1$s plugin requires either the PHP cURL extensions, or the %2$s PHP "
+"setting to be turned on. Please update the settings in your %3$s file or "
+"contact your hosting provider for assistance."
+msgstr ""
+"Il plugin %1$s richiede che siano attivate le estensioni PHP cURL o "
+"l'impostazione %2$s PHP. Aggiornare le impostazioni nel file %3$s o "
+"contattare il proprio provider di hosting per assistenza."
+
+#: class-r34ics.php:203
+#, php-format
+msgid ""
+"%1$sYour site is currently using a UTC offset-based timezone setting.%2$s "
+"This can produce time display errors in the %3$s plugin in locations that "
+"observe Daylight Saving Time. Please %4$schange your timezone setting%5$s to "
+"the city nearest your location, in the same timezone, for proper time "
+"display. See our %6$sdocumentation%7$s for additional information on this "
+"issue."
+msgstr ""
+"%1$sIl vostro sito sta attualmente utilizzando un'impostazione del fuso "
+"orario basata sull'offset UTC.%2$s Questo può produrre errori di "
+"visualizzazione dell'ora nel plugin %3$s nelle località che osservano l'ora "
+"legale. Si prega di %4$scambiare l'impostazione del fuso orario%5$s con la "
+"città più vicina alla propria posizione, nello stesso fuso orario, per una "
+"corretta visualizzazione dell'ora. Per ulteriori informazioni su questo "
+"problema, consultare la nostra %6$sdocumentazione%7$s."
+
+#: class-r34ics.php:221
+#, php-format
+msgid "Cleared %1$s %2$s transient(s)."
+msgstr "Cancellati %1$s %2$s transitori."
+
+#: class-r34ics.php:228
+#, php-format
+msgid "No %1$s transients were found."
+msgstr "Non sono stati trovati transitori %1$s."
+
+#: class-r34ics.php:250 templates/admin/sidebar.php:3
+msgid "User Guide"
+msgstr "Guida dell'utente"
+
+#: class-r34ics.php:252 templates/admin/sidebar.php:36
+msgid "Upgrade to PRO!"
+msgstr "Passa a PRO!"
+
+#: class-r34ics.php:270
+msgid "Show/hide all"
+msgstr "Mostra/nascondi tutto"
+
+#: class-r34ics.php:533
+msgid ""
+"ICS file could not be retrieved or was empty. Please verify URL is correct, "
+"and check your php.ini configuration to verify either cURL or "
+"allow_url_fopen is available. If you are using spaces to delimit multiple "
+"URLs, you may also wish to try using the pipe character instead. Affected "
+"URL:"
+msgstr ""
+"Impossibile recuperare il file ICS o vuoto. Verifica che l'URL sia corretto "
+"e controlla la configurazione di php.ini per verificare che cURL o "
+"allow_url_fopen sia disponibile. Se si utilizzano spazi per delimitare più "
+"URL, è anche possibile provare a utilizzare il carattere barra verticale. "
+"URL interessato:"
+
+#: class-r34ics.php:700
+msgid "Ends"
+msgstr "Finisce"
+
+#: class-r34ics.php:872
+msgid "Hide past events"
+msgstr "Nascondi eventi passati"
+
+#: class-r34ics.php:873 templates/calendar-month.php:83
+#: templates/calendar-week.php:80
+msgid "Show past events"
+msgstr "Mostra eventi passati"
+
+#: class-r34ics.php:955
+msgid "Click for more..."
+msgstr "Clicca per saperne di più..."
+
+#: class-r34ics.php:988
+msgid "Save to your calendar"
+msgstr "Salva nel tuo calendario"
+
+#: class-r34ics.php:988
+msgid "Download"
+msgstr "Scarica"
+
+#: class-r34ics.php:1064
+msgid "Cancelled"
+msgstr "Annullato"
+
+#: class-r34ics.php:1258
+msgid ""
+"The \"currentweek\" shortcode attribute is deprecated. Please use view=\"week"
+"\" in your shortcode instead."
+msgstr ""
+"L'attributo shortcode \"currentweek\" è deprecato. Si prega di utilizzare "
+"view=\"week\" nello shortcode."
+
+#: class-r34ics.php:1429
+msgid "calendar event"
+msgstr "evento del calendario"
+
+#: functions.php:704
+msgid "Recurring event"
+msgstr "Evento ricorrente"
+
+#: functions.php:709
+#, php-format
+msgid "Recurs every %s years"
+msgstr "Ricorre ogni %s anni"
+
+#: functions.php:709
+msgid "Recurs yearly"
+msgstr "Ricorre ogni anno"
+
+#: functions.php:712
+#, php-format
+msgid "Recurs every %s months"
+msgstr "Ricorre ogni %s mesi"
+
+#: functions.php:712
+msgid "Recurs monthly"
+msgstr "Ricorre mensilmente"
+
+#: functions.php:715
+#, php-format
+msgid "Recurs every %s weeks"
+msgstr "Ricorre ogni %s settimane"
+
+#: functions.php:715
+msgid "Recurs weekly"
+msgstr "Ricorre settimanalmente"
+
+#: functions.php:718
+#, php-format
+msgid "Recurs every %s days"
+msgstr "Ricorre ogni %s giorni"
+
+#: functions.php:718
+msgid "Recurs daily"
+msgstr "Ricorre ogni giorno"
+
+#: functions.php:794
+#, php-format
+msgid ""
+"The \"url\" property in your %1$s shortcode appears to contain HTML tags; "
+"most likely your URL has been turned into a clickable link. Your calendar "
+"may not display properly as a result. Please remove the clickable link in "
+"the shortcode."
+msgstr ""
+"La proprietà \"url\" dello shortcode %1$s sembra contenere tag HTML; molto "
+"probabilmente l'URL è stato trasformato in un link cliccabile. Di "
+"conseguenza, il calendario potrebbe non essere visualizzato correttamente. "
+"Si prega di rimuovere il link cliccabile nel codice breve."
+
+#: functions.php:1015
+msgid "The r34ics_url_get_contents() function is no longer supported."
+msgstr "La funzione r34ics_url_get_contents() non è più supportata."
+
+#: ics-calendar.php:76
+#, php-format
+msgid ""
+"Thank you for installing %1$s. Before creating your first calendar "
+"shortcode, please visit your %2$sGeneral Settings%3$s page and verify that "
+"your site language, timezone and date/time format settings are correct. See "
+"our %4$sUser Guide%5$s for more information."
+msgstr ""
+"Grazie per aver installato %1$s. Prima di creare il primo shortcode del "
+"calendario, visitare la pagina %2$sImpostazioni generali%3$s e verificare "
+"che la lingua del sito, il fuso orario e il formato data/ora siano corretti. "
+"Per ulteriori informazioni, consultare la %4$sGuida all'uso%5$s."
+
+#: templates/admin/add-calendar-button.php:1 templates/admin/add-calendar.php:6
+#, php-format
+msgid "Add %1$s"
+msgstr "Aggiungi %1$s"
+
+#: templates/admin/add-calendar.php:7
+msgid "Close"
+msgstr "Chiudi"
+
+#: templates/admin/add-calendar.php:16
+msgid "ICS Feed URL:"
+msgstr "URL del feed ICS:"
+
+#: templates/admin/add-calendar.php:18
+#, php-format
+msgid ""
+"Be sure you are using a %1$ssubscribe%2$s URL, not a %3$sweb view%4$s URL."
+"%5$s (Entering the URL directly in your web browser should download an %6$s "
+"file.)"
+msgstr ""
+"Assicurarsi di utilizzare un %1$sURL di sottoscrizione%2$s, non un %3$sURL "
+"di visualizzazione web%4$s.%5$s (Inserendo l'URL direttamente nel browser "
+"web si dovrebbe scaricare un %6$s file)"
+
+#: templates/admin/add-calendar.php:22
+msgid "Calendar Title:"
+msgstr "Titolo del calendario:"
+
+#: templates/admin/add-calendar.php:24
+#, php-format
+msgid ""
+"Leave empty to use calendar&rsquo;s default title. Enter %1$s to omit title "
+"altogether."
+msgstr ""
+"Lasciare vuoto per utilizzare il titolo predefinito del calendario. Inserire "
+"%1$s per omettere del tutto il titolo."
+
+#: templates/admin/add-calendar.php:28
+msgid "Calendar Description:"
+msgstr "Descrizione del calendario:"
+
+#: templates/admin/add-calendar.php:30
+#, php-format
+msgid ""
+"Leave empty to use calendar&rsquo;s default description. Enter %1$s to omit "
+"description altogether."
+msgstr ""
+"Lasciare vuoto per utilizzare la descrizione predefinita del calendario. "
+"Inserire %1$s per omettere del tutto la descrizione."
+
+#: templates/admin/add-calendar.php:34
+msgid "View:"
+msgstr "Mostra:"
+
+#: templates/admin/add-calendar.php:36
+msgid "month"
+msgstr "mese"
+
+#: templates/admin/add-calendar.php:37
+msgid "list"
+msgstr "lista"
+
+#: templates/admin/add-calendar.php:38
+msgid "week"
+msgstr "settimana"
+
+#: templates/admin/add-calendar.php:43 templates/admin/add-calendar.php:48
+msgid "Count:"
+msgstr "Conteggio:"
+
+#: templates/admin/add-calendar.php:46 templates/admin/add-calendar.php:48
+msgid "Format:"
+msgstr "Formato:"
+
+#: templates/admin/add-calendar.php:48
+#, php-format
+msgid ""
+"Leave %1$s blank to include all upcoming events. %2$s must be a standard "
+"%3$sPHP date format string%4$s."
+msgstr ""
+"Lasciare %1$s vuoto per includere tutti i prossimi eventi. %2$s deve essere "
+"una stringa di formato data standard %3$sPHP%4$s."
+
+#: templates/admin/add-calendar.php:53
+#, php-format
+msgid ""
+"Show event descriptions %1$s(change to a number in inserted shortcode to set "
+"word limit)%2$s"
+msgstr ""
+"Mostra le descrizioni degli eventi %1$s (cambiare in un numero nello "
+"shortcode inserito per impostare il limite di parole)%2$s"
+
+#: templates/admin/add-calendar.php:58
+#, php-format
+msgid "Show event locations %1$s(if available)%2$s"
+msgstr "Mostra i luoghi dell'evento %1$s(se disponibile)%2$s"
+
+#: templates/admin/add-calendar.php:63
+#, php-format
+msgid "Show event organizers %1$s(if available)%2$s"
+msgstr "Mostra gli organizzatori dell'evento %1$s(se disponibile)%2$s"
+
+#: templates/admin/add-calendar.php:67
+#, php-format
+msgid ""
+"%1$sNote:%2$s Additional %3$sdisplay options%4$s are available by manually "
+"editing the shortcode after insertion."
+msgstr ""
+"%1$sNota:%2$s Ulteriori %3$sopzioni di visualizzazione%4$s sono disponibili "
+"modificando manualmente lo shortcode dopo l'inserimento."
+
+#: templates/admin/add-calendar.php:71
+#, php-format
+msgid "Insert %1$s"
+msgstr "Inserire %1$s"
+
+#: templates/admin/admin.php:15
+msgid "Basic Shortcode Example"
+msgstr "Esempio di shortcode di base"
+
+#: templates/admin/admin.php:19
+#, php-format
+msgid ""
+"To insert an %1$s in a page, use the following shortcode format, replacing "
+"the all-caps text with your feed URL. Many additional customization options "
+"are available. Please see the %2$sUser Guide%3$s for details."
+msgstr ""
+"Per inserire un %1$s in una pagina, utilizzare il seguente formato "
+"shortcode, sostituendo il testo tutto maiuscolo con l'URL del feed. Sono "
+"disponibili molte altre opzioni di personalizzazione. Per maggiori dettagli, "
+"consultare la %2$sGuida all'uso%3$s."
+
+#: templates/admin/admin.php:37
+msgid "System Report"
+msgstr "Rapporto Sistema"
+
+#: templates/admin/admin.php:41
+msgid ""
+"Please copy the following text and include it in your message when emailing "
+"support."
+msgstr ""
+"Copiare il testo seguente e includerlo nel messaggio quando si invia un'e-"
+"mail al supporto."
+
+#: templates/admin/admin.php:42
+#, php-format
+msgid ""
+"Also please include the %1$s shortcode exactly as you have it entered on the "
+"affected page."
+msgstr ""
+"Si prega inoltre di includere lo shortcode %1$s esattamente come è stato "
+"inserito nella pagina interessata."
+
+#: templates/admin/sidebar.php:5
+msgid ""
+"Our complete user guide is now available with full translation into dozens "
+"of languages on our website:"
+msgstr ""
+"La nostra guida completa per l'utente è ora disponibile con traduzione "
+"completa in dozzine di lingue sul nostro sito web:"
+
+#: templates/admin/sidebar.php:7
+msgid "Support"
+msgstr "Supporto"
+
+#: templates/admin/sidebar.php:9
+#, php-format
+msgid ""
+"For support please email %1$s or use the %2$sWordPress Support Forums%3$s."
+msgstr ""
+"Per assistenza, invia un'e-mail a %1$s o utilizza i forum di supporto "
+"%2$sWordPress%3$s."
+
+#: templates/admin/sidebar.php:11
+msgid "Additional Resources"
+msgstr "Risorse Addizionali"
+
+#: templates/admin/sidebar.php:13
+msgid "ICS documentation and tools:"
+msgstr "Documentazione e strumenti ICS:"
+
+#: templates/admin/sidebar.php:17
+msgid "ICS Parser at GitHub"
+msgstr "Parser ICS su GitHub"
+
+#: templates/admin/sidebar.php:18
+msgid "iCal Validator"
+msgstr "Convalida iCal"
+
+#: templates/admin/sidebar.php:19
+msgid "Recurrence Rule Tester"
+msgstr "Tester regole di ricorrenza"
+
+#: templates/admin/sidebar.php:23
+msgid "Miscellaneous reference and tools:"
+msgstr "Riferimenti e strumenti vari:"
+
+#: templates/admin/sidebar.php:27
+msgid "HTML Color Picker"
+msgstr "Selezione colori HTML"
+
+#: templates/admin/sidebar.php:28
+msgid "Unix Timestamp Converter"
+msgstr "Convertitore Timestamp Unix"
+
+#: templates/admin/sidebar.php:37
+#, php-format
+msgid ""
+"Features include additional views (month-with-sidebar, year-with-sidebar, "
+"sidebar widget, and conference schedule grid view), a Calendar Builder with "
+"save feature for full management of calendar settings without manually "
+"editing the shortcode, Customizer options to easily modify the "
+"calendar&rsquo;s appearance, advanced features like regular expressions, and "
+"more! Visit %s to learn more."
+msgstr ""
+"Le funzionalità includono visualizzazioni aggiuntive (mese con barra "
+"laterale, anno con barra laterale, widget barra laterale e visualizzazione "
+"griglia della pianificazione della conferenza), un Generatore di calendari "
+"con funzione di salvataggio per la gestione completa delle impostazioni del "
+"calendario senza modificare manualmente il codice breve, opzioni di "
+"personalizzazione per modificare facilmente l'aspetto del calendario, "
+"funzionalità avanzate come espressioni regolari e altro ancora! Visita %s "
+"per saperne di più."
+
+#: templates/admin/sidebar.php:43
+msgid "Thank You!"
+msgstr "Grazie!"
+
+#: templates/admin/sidebar.php:44
+#, php-format
+msgid ""
+"This plugin is free to use. If you find it to be of value, we welcome your "
+"donation (suggested amount: US $9), to help fund future development, or get "
+"the advanced features of the %1$sPRO version%2$s for just US $29/year."
+msgstr ""
+"Questo plugin è gratuito. Se lo ritieni di valore, accogliamo con favore la "
+"tua donazione (importo suggerito: US $ 9), per aiutare a finanziare lo "
+"sviluppo futuro o ottenere le funzionalità avanzate della versione %1$sPRO"
+"%2$s per soli US $ 29 / anno."
+
+#: templates/admin/sidebar.php:46
+msgid "Make a Donation"
+msgstr "Fai una donazione"
+
+#: templates/admin/sidebar.php:46
+msgid "Go PRO!"
+msgstr "Vai PRO!"
+
+#: templates/admin/utilities.php:1
+msgid "Utilities"
+msgstr "Servizi"
+
+#: templates/admin/utilities.php:9
+msgid "Clear Cached Calendar Data"
+msgstr "Cancellare i dati del calendario memorizzati nella cache"
+
+#: templates/admin/utilities.php:10
+msgid ""
+"This will immediately clear all existing cached calendar data (purge "
+"transients), forcing WordPress to reload all calendars the next time they "
+"are viewed. Caching will then resume as before."
+msgstr ""
+"Questo rilamenterà immediatamente tutti i dati del calendario memorizzati "
+"nella cache esistenti (elimina i transitori), costringendo WordPress a "
+"ricaricare tutti i calendari la prossima volta che vengono visualizzati. La "
+"memorizzazione nella cache riprenderà quindi come prima."
+
+#: templates/admin/utilities.php:17
+msgid "ICS Feed URL Tester"
+msgstr "ICS Feed URL Tester"
+
+#: templates/admin/utilities.php:21
+msgid ""
+"If you are concerned that the plugin is not properly retrieving your feed, "
+"you can test the URL here. The raw data received by the plugin will be "
+"displayed below."
+msgstr ""
+"Se sei preoccupato che il plug-in non recuperi correttamente il tuo feed, "
+"puoi testare l'URL qui. I dati grezzi ricevuti dal plugin verranno "
+"visualizzati di seguito."
+
+#: templates/admin/utilities.php:28
+msgid "Enter feed URL..."
+msgstr "Immettere l'URL del feed in..."
+
+#: templates/admin/utilities.php:28
+msgid "Test URL"
+msgstr "Test URL"
+
+#: templates/admin/utilities.php:35
+#, php-format
+msgid "%s received."
+msgstr "%s ricevuto."
+
+#: templates/admin/utilities.php:39
+msgid "This does not appear to be a valid ICS feed URL."
+msgstr "Questo non sembra essere un URL di alimentazione ICS valido."
+
+#: templates/admin/utilities.php:48
+msgid "Could not retrieve data from the requested URL."
+msgstr "Impossibile recuperare i dati dall'URL richiesto."
+
+#: templates/admin/utilities.php:53
+msgid ""
+"An unknown error occurred while attempting to retrieve the requested URL."
+msgstr ""
+"Si è verificato un errore sconosciuto durante il tentativo di recuperare "
+"l'URL richiesto."
+
+#: templates/calendar-list.php:43
+msgid "No events found."
+msgstr "Nessun evento trovato."
+
+#: templates/calendar-list.php:247 templates/calendar-month.php:191
+#: templates/calendar-week.php:204
+msgid "All Day"
+msgstr "Tutto il giorno"
+
+#: templates/calendar-month.php:273 templates/calendar-week.php:289
+msgid "No events."
+msgstr "Nessun evento."
+
+#: templates/calendar-month.php:285
+msgid "No additional events this month."
+msgstr "Nessun evento aggiuntivo questo mese."
+
+#: templates/calendar-week.php:70
+msgid "Last week"
+msgstr "La settimana scorsa"
+
+#: templates/calendar-week.php:71
+msgid "This week"
+msgstr "Questa settimana"
+
+#: templates/calendar-week.php:72
+msgid "Next week"
+msgstr "La settimana prossima"
+
+#. Plugin Name of the plugin/theme
+msgid "ICS Calendar"
+msgstr "ICS Calendar"
+
+#. Description of the plugin/theme
+msgid "Embed a live updating iCal (ICS) feed in any page using a shortcode."
+msgstr ""
+"Incorpora un feed iCal (ICS) per l’aggiornamento in tempo reale in qualsiasi "
+"pagina utilizzando uno shortcode."
+
+#. Author of the plugin/theme
+msgid "Room 34 Creative Services, LLC"
+msgstr "Room 34 Creative Services, LLC"
+
+#. Author URI of the plugin/theme
+msgid "https://icscalendar.com"
+msgstr "https://icscalendar.com"
+
+#~ msgid "Add ICS Calendar"
+#~ msgstr "Calendario ICS"
+
+#~ msgid "Your site is currently using a UTC offset-based timezone setting."
+#~ msgstr ""
+#~ "Il sito sta attualmente utilizzando un'impostazione del fuso orario "
+#~ "basata sull'offset UTC."
+
+#, php-format
+#~ msgid ""
+#~ "This can produce time display errors in the %s plugin in locations that "
+#~ "observe Daylight Saving Time."
+#~ msgstr ""
+#~ "Ciò può produrre errori di visualizzazione dell'ora nel plug-in %s in "
+#~ "posizioni che osservano l'ora legale."
+
+#, php-format
+#~ msgid ""
+#~ "Please %1$schange your timezone setting%2$s to the city nearest your "
+#~ "location, in the same timezone, for proper time display."
+#~ msgstr ""
+#~ "Si prega di %1$smodificare l'impostazione del fuso orario%2$s alla città "
+#~ "più vicina alla propria posizione, nello stesso fuso orario, per una "
+#~ "corretta visualizzazione dell'ora."
+
+#, php-format
+#~ msgid ""
+#~ "See the %1$sPHP documentation%2$s for additional information on this "
+#~ "issue."
+#~ msgstr ""
+#~ "Vedere la documentazione %1$sPHP%2$s per ulteriori informazioni su questo "
+#~ "problema."
+
+#~ msgid "Thank you for upgrading to ICS Calendar version 7.0!"
+#~ msgstr "Grazie per l'aggiornamento a ICS Calendar versione 7.0!"
+
+#, php-format
+#~ msgid ""
+#~ "%sPlease note that this version includes a major rewrite of the logic for "
+#~ "formatting event dates and times.%s We have made every effort to ensure "
+#~ "that the new functionality is stable and reliable, but if you encounter "
+#~ "any issues, such as incorrect dates and times, headers displaying the "
+#~ "wrong month, or page layout issues, please contact us at %s and we will "
+#~ "assist you as quickly as possible. Please include the contents of the "
+#~ "%sSystem Report%s in your email."
+#~ msgstr ""
+#~ "%s Si noti che questa versione include una riscrittura importante della "
+#~ "logica per la formattazione delle date e delle ore degli eventi. %s "
+#~ "Abbiamo fatto ogni sforzo per garantire che la nuova funzionalità sia "
+#~ "stabile e affidabile, ma se riscontri problemi, come date e orari errati, "
+#~ "intestazioni che mostrano il mese sbagliato o problemi di layout di "
+#~ "pagina, contattaci al %s e ti aiuteremo il più rapidamente possibile. Si "
+#~ "prega di includere il contenuto del %sSystem Report%s nella posta "
+#~ "elettronica."
+
+#~ msgid ""
+#~ "No events found in ICS feed(s). This may mean your calendar contains no "
+#~ "events, your feed URL may be incorrect, or your shortcode may have other "
+#~ "configuration errors. Set debug=\"true\" in shortcode for additional "
+#~ "details."
+#~ msgstr ""
+#~ "Nessun evento trovato nei feed ICS. Questo errore può indicare che il "
+#~ "calendario non contiene eventi, che l'URL del feed potrebbe non essere "
+#~ "corretto o che lo shortcode potrebbe contenere altri errori di "
+#~ "configurazione. Impostare debug=\"true\" in shortcode per ulteriori "
+#~ "dettagli."

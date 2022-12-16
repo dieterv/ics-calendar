@@ -1,0 +1,590 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ICS Calendar\n"
+"POT-Creation-Date: 2022-11-07 12:29-0600\n"
+"PO-Revision-Date: 2022-11-07 12:30-0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ko_KR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.2\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: ics-calendar.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: class-r34ics.php:194
+#, php-format
+msgid ""
+"The %1$s plugin requires either the PHP cURL extensions, or the %2$s PHP "
+"setting to be turned on. Please update the settings in your %3$s file or "
+"contact your hosting provider for assistance."
+msgstr ""
+"%1$s 플러그인을 사용하려면 PHP cURL 확장 또는 %2$s PHP 설정이 켜져 있어야 합"
+"니다. %3$s 파일의 설정을 업데이트하거나 호스팅 제공업체에 도움을 요청하세요."
+
+#: class-r34ics.php:203
+#, php-format
+msgid ""
+"%1$sYour site is currently using a UTC offset-based timezone setting.%2$s "
+"This can produce time display errors in the %3$s plugin in locations that "
+"observe Daylight Saving Time. Please %4$schange your timezone setting%5$s to "
+"the city nearest your location, in the same timezone, for proper time "
+"display. See our %6$sdocumentation%7$s for additional information on this "
+"issue."
+msgstr ""
+"%1$s귀하의 사이트는 현재 UTC 오프셋 기반 시간대 설정을 사용하고 있습니다."
+"%2$s 이로 인해 일광 절약 시간제를 준수하는 위치의 %3$s 플러그인에서 시간 표"
+"시 오류가 발생할 수 있습니다. 적절한 시간 표시를 위해 동일한 시간대의 사용자 "
+"위치에서 가장 가까운 도시로 %4$s시간대 설정을 변경%5$s하십시오. 이 문제에 대"
+"한 추가 정보는 %6$s문서%7$s를 참조하세요."
+
+#: class-r34ics.php:221
+#, php-format
+msgid "Cleared %1$s %2$s transient(s)."
+msgstr "일시적인 %1$s %2$s개를 지웠습니다."
+
+#: class-r34ics.php:228
+#, php-format
+msgid "No %1$s transients were found."
+msgstr "%1$s 과도기를 찾을 수 없습니다."
+
+#: class-r34ics.php:250 templates/admin/sidebar.php:3
+msgid "User Guide"
+msgstr "사용자 가이드"
+
+#: class-r34ics.php:252 templates/admin/sidebar.php:36
+msgid "Upgrade to PRO!"
+msgstr "프로로 업그레이드!"
+
+#: class-r34ics.php:270
+msgid "Show/hide all"
+msgstr "모든 표시/숨기기"
+
+#: class-r34ics.php:533
+msgid ""
+"ICS file could not be retrieved or was empty. Please verify URL is correct, "
+"and check your php.ini configuration to verify either cURL or "
+"allow_url_fopen is available. If you are using spaces to delimit multiple "
+"URLs, you may also wish to try using the pipe character instead. Affected "
+"URL:"
+msgstr ""
+"ICS 파일을 검색할 수 없거나 비어 있습니다. URL이 올바른지 확인하고 php.ini 구"
+"성을 확인하여 cURL 또는 allow_url_fopen 사용할 수 있는지 확인하십시오. 공백"
+"을 사용하여 여러 URL을 구분하는 경우 대신 파이프 문자를 사용해 볼 수도 있습니"
+"다. 영향을 받는 URL:"
+
+#: class-r34ics.php:700
+msgid "Ends"
+msgstr "Ends 파일"
+
+#: class-r34ics.php:872
+msgid "Hide past events"
+msgstr "지난 일정 숨기기"
+
+#: class-r34ics.php:873 templates/calendar-month.php:83
+#: templates/calendar-week.php:80
+msgid "Show past events"
+msgstr "과거 이벤트 표시"
+
+#: class-r34ics.php:955
+msgid "Click for more..."
+msgstr "자세한 내용을 보려면 클릭하십시오..."
+
+#: class-r34ics.php:988
+msgid "Save to your calendar"
+msgstr "캘린더에 저장"
+
+#: class-r34ics.php:988
+msgid "Download"
+msgstr "다운로드"
+
+#: class-r34ics.php:1064
+msgid "Cancelled"
+msgstr "취소됨"
+
+#: class-r34ics.php:1258
+msgid ""
+"The \"currentweek\" shortcode attribute is deprecated. Please use view=\"week"
+"\" in your shortcode instead."
+msgstr ""
+"\"currentweek\" 단축 코드 특성은 더 이상 사용되지 않습니다. 대신 단축코드에"
+"서 view=\"week\" 를 사용하십시오."
+
+#: class-r34ics.php:1429
+msgid "calendar event"
+msgstr "캘린더 이벤트"
+
+#: functions.php:704
+msgid "Recurring event"
+msgstr "반복 행사"
+
+#: functions.php:709
+#, php-format
+msgid "Recurs every %s years"
+msgstr "%s 년마다 재귀"
+
+#: functions.php:709
+msgid "Recurs yearly"
+msgstr "매년 재귀"
+
+#: functions.php:712
+#, php-format
+msgid "Recurs every %s months"
+msgstr "%s 개월마다 재귀"
+
+#: functions.php:712
+msgid "Recurs monthly"
+msgstr "매월 재귀"
+
+#: functions.php:715
+#, php-format
+msgid "Recurs every %s weeks"
+msgstr "%s 주마다 재귀"
+
+#: functions.php:715
+msgid "Recurs weekly"
+msgstr "매주 재귀"
+
+#: functions.php:718
+#, php-format
+msgid "Recurs every %s days"
+msgstr "%s 일마다 재귀"
+
+#: functions.php:718
+msgid "Recurs daily"
+msgstr "매일 재귀"
+
+#: functions.php:794
+#, php-format
+msgid ""
+"The \"url\" property in your %1$s shortcode appears to contain HTML tags; "
+"most likely your URL has been turned into a clickable link. Your calendar "
+"may not display properly as a result. Please remove the clickable link in "
+"the shortcode."
+msgstr ""
+"%1$s 단축 코드의 \"url\" 속성이 HTML 태그를 포함하는 것으로 보입니다. URL이 "
+"클릭 가능한 링크로 바뀌었을 가능성이 큽니다. 결과적으로 캘린더가 제대로 표시"
+"되지 않을 수 있습니다. 단축 코드에서 클릭 가능한 링크를 제거하십시오."
+
+#: functions.php:1015
+msgid "The r34ics_url_get_contents() function is no longer supported."
+msgstr "r34ics_url_get_contents() 함수는 더 이상 지원되지 않습니다."
+
+#: ics-calendar.php:76
+#, php-format
+msgid ""
+"Thank you for installing %1$s. Before creating your first calendar "
+"shortcode, please visit your %2$sGeneral Settings%3$s page and verify that "
+"your site language, timezone and date/time format settings are correct. See "
+"our %4$sUser Guide%5$s for more information."
+msgstr ""
+"%1$s을(를) 설치해 주셔서 감사합니다. 첫 번째 캘린더 단축 코드를 만들기 전에 "
+"%2$s일반 설정%3$s 페이지를 방문하여 사이트 언어, 시간대 및 날짜/시간 형식 설"
+"정이 올바른지 확인하십시오. 자세한 내용은 %4$s사용자 가이드%5$s를 참조하세요."
+
+#: templates/admin/add-calendar-button.php:1 templates/admin/add-calendar.php:6
+#, php-format
+msgid "Add %1$s"
+msgstr "%1$s 추가"
+
+#: templates/admin/add-calendar.php:7
+msgid "Close"
+msgstr "닫기"
+
+#: templates/admin/add-calendar.php:16
+msgid "ICS Feed URL:"
+msgstr "ICS 피드 URL:"
+
+#: templates/admin/add-calendar.php:18
+#, php-format
+msgid ""
+"Be sure you are using a %1$ssubscribe%2$s URL, not a %3$sweb view%4$s URL."
+"%5$s (Entering the URL directly in your web browser should download an %6$s "
+"file.)"
+msgstr ""
+"%3$s웹 보기%4$s URL이 아닌 %1$s구독%2$s URL을 사용하고 있는지 확인하십시오."
+"%5$s(웹 브라우저에 URL을 직접 입력하면 %6$s 파일을 다운로드해야 합니다.)"
+
+#: templates/admin/add-calendar.php:22
+msgid "Calendar Title:"
+msgstr "캘린더 제목:"
+
+#: templates/admin/add-calendar.php:24
+#, php-format
+msgid ""
+"Leave empty to use calendar&rsquo;s default title. Enter %1$s to omit title "
+"altogether."
+msgstr ""
+"캘린더의 기본 제목을 사용하려면 비워 둡니다. 제목을 완전히 생략하려면 %1$s을 "
+"입력합니다."
+
+#: templates/admin/add-calendar.php:28
+msgid "Calendar Description:"
+msgstr "달력 설명:"
+
+#: templates/admin/add-calendar.php:30
+#, php-format
+msgid ""
+"Leave empty to use calendar&rsquo;s default description. Enter %1$s to omit "
+"description altogether."
+msgstr ""
+"캘린더의 기본 설명을 사용하려면 비워 둡니다. 설명을 모두 생략하려면 %1$s을 입"
+"력합니다."
+
+#: templates/admin/add-calendar.php:34
+msgid "View:"
+msgstr "보기:"
+
+#: templates/admin/add-calendar.php:36
+msgid "month"
+msgstr "월"
+
+#: templates/admin/add-calendar.php:37
+msgid "list"
+msgstr "목록"
+
+#: templates/admin/add-calendar.php:38
+msgid "week"
+msgstr "주"
+
+#: templates/admin/add-calendar.php:43 templates/admin/add-calendar.php:48
+msgid "Count:"
+msgstr "카운트:"
+
+#: templates/admin/add-calendar.php:46 templates/admin/add-calendar.php:48
+msgid "Format:"
+msgstr "포맷:"
+
+#: templates/admin/add-calendar.php:48
+#, php-format
+msgid ""
+"Leave %1$s blank to include all upcoming events. %2$s must be a standard "
+"%3$sPHP date format string%4$s."
+msgstr ""
+"예정된 모든 이벤트를 포함하려면 %1$s을 비워 둡니다. %2$s은 표준 %3$sPHP 날짜 "
+"형식 문자열%4$s이어야 합니다."
+
+#: templates/admin/add-calendar.php:53
+#, php-format
+msgid ""
+"Show event descriptions %1$s(change to a number in inserted shortcode to set "
+"word limit)%2$s"
+msgstr ""
+"이벤트 설명 표시%1$s(단어 제한을 설정하려면 삽입된 단축 코드의 숫자로 변"
+"경)%2$s"
+
+#: templates/admin/add-calendar.php:58
+#, php-format
+msgid "Show event locations %1$s(if available)%2$s"
+msgstr "이벤트 위치 표시%1$s(가능한 경우)%2$s"
+
+#: templates/admin/add-calendar.php:63
+#, php-format
+msgid "Show event organizers %1$s(if available)%2$s"
+msgstr "이벤트 주최자 표시%1$s(가능한 경우)%2$s"
+
+#: templates/admin/add-calendar.php:67
+#, php-format
+msgid ""
+"%1$sNote:%2$s Additional %3$sdisplay options%4$s are available by manually "
+"editing the shortcode after insertion."
+msgstr ""
+"%1$s참고:%2$s 삽입 후 단축 코드를 수동으로 수정하면 추가 %3$s표시 옵션%4$s을 "
+"사용할 수 있습니다."
+
+#: templates/admin/add-calendar.php:71
+#, php-format
+msgid "Insert %1$s"
+msgstr "%1$s 삽입"
+
+#: templates/admin/admin.php:15
+msgid "Basic Shortcode Example"
+msgstr "기본 단축 코드 예제"
+
+#: templates/admin/admin.php:19
+#, php-format
+msgid ""
+"To insert an %1$s in a page, use the following shortcode format, replacing "
+"the all-caps text with your feed URL. Many additional customization options "
+"are available. Please see the %2$sUser Guide%3$s for details."
+msgstr ""
+"페이지에 %1$s을 삽입하려면 다음 단축 코드 형식을 사용하여 모두 대문자로 된 텍"
+"스트를 피드 URL로 바꿉니다. 많은 추가 사용자 지정 옵션을 사용할 수 있습니다. "
+"자세한 내용은 %2$s사용자 가이드%3$s를 참조하세요."
+
+#: templates/admin/admin.php:37
+msgid "System Report"
+msgstr "시스템 보고서"
+
+#: templates/admin/admin.php:41
+msgid ""
+"Please copy the following text and include it in your message when emailing "
+"support."
+msgstr "다음 텍스트를 복사하여 지원 이메일을 보낼 때 메시지에 포함하십시오."
+
+#: templates/admin/admin.php:42
+#, php-format
+msgid ""
+"Also please include the %1$s shortcode exactly as you have it entered on the "
+"affected page."
+msgstr ""
+"또한 영향을 받는 페이지에 입력한 것과 동일한 %1$s 단축 코드를 포함하십시오."
+
+#: templates/admin/sidebar.php:5
+msgid ""
+"Our complete user guide is now available with full translation into dozens "
+"of languages on our website:"
+msgstr ""
+"이제 당사의 전체 사용자 가이드는 당사 웹 사이트에서 수십 개의 언어로 전체 번"
+"역을 사용할 수 있습니다."
+
+#: templates/admin/sidebar.php:7
+msgid "Support"
+msgstr "지원"
+
+#: templates/admin/sidebar.php:9
+#, php-format
+msgid ""
+"For support please email %1$s or use the %2$sWordPress Support Forums%3$s."
+msgstr ""
+"지원을 받으시면 %1$s 이메일을 보내거나 %2$s워드프레스 지원 포럼%3$s을 사용하"
+"십시오."
+
+#: templates/admin/sidebar.php:11
+msgid "Additional Resources"
+msgstr "추가 리소스"
+
+#: templates/admin/sidebar.php:13
+msgid "ICS documentation and tools:"
+msgstr "ICS 문서 및 도구:"
+
+#: templates/admin/sidebar.php:17
+msgid "ICS Parser at GitHub"
+msgstr "ICS 파서 앳 GitHub"
+
+#: templates/admin/sidebar.php:18
+msgid "iCal Validator"
+msgstr "아이칼 유효성 검사기"
+
+#: templates/admin/sidebar.php:19
+msgid "Recurrence Rule Tester"
+msgstr "되풀이 규칙 테스터"
+
+#: templates/admin/sidebar.php:23
+msgid "Miscellaneous reference and tools:"
+msgstr "기타 참조 및 도구:"
+
+#: templates/admin/sidebar.php:27
+msgid "HTML Color Picker"
+msgstr "HTML 컬러 피커"
+
+#: templates/admin/sidebar.php:28
+msgid "Unix Timestamp Converter"
+msgstr "유닉스 타임스탬프 컨버터"
+
+#: templates/admin/sidebar.php:37
+#, php-format
+msgid ""
+"Features include additional views (month-with-sidebar, year-with-sidebar, "
+"sidebar widget, and conference schedule grid view), a Calendar Builder with "
+"save feature for full management of calendar settings without manually "
+"editing the shortcode, Customizer options to easily modify the "
+"calendar&rsquo;s appearance, advanced features like regular expressions, and "
+"more! Visit %s to learn more."
+msgstr ""
+"기능에는 추가 보기(월 포함 형부, 연도 포함 사이드바, 사이드바 위젯 및 컨퍼런"
+"스 일정 그리드 보기), 일정 설정을 수동으로 편집하지 않고 캘린더 설정을 완전"
+"히 제어할 수 있는 저장 기능의 캘린더 빌더, 캘린더의 모양을 쉽게 수정할 수 있"
+"는 커스터마이저 옵션, 정규 식과 같은 고급 기능 등이 있습니다! 자세한 내용은 "
+"%s 방문하십시오."
+
+#: templates/admin/sidebar.php:43
+msgid "Thank You!"
+msgstr "감사합니다!"
+
+#: templates/admin/sidebar.php:44
+#, php-format
+msgid ""
+"This plugin is free to use. If you find it to be of value, we welcome your "
+"donation (suggested amount: US $9), to help fund future development, or get "
+"the advanced features of the %1$sPRO version%2$s for just US $29/year."
+msgstr ""
+"이 플러그인은 무료로 사용할 수 있습니다. 당신이 가치있는 것으로 발견되면, 우"
+"리는 당신의 기부를 환영합니다 (제안 된 금액 : US $9), 미래의 개발을 자금을 지"
+"원하거나 %1$sPRO 버전의 고급 기능을 얻을 %2$s 단지 $ 29 / 년."
+
+#: templates/admin/sidebar.php:46
+msgid "Make a Donation"
+msgstr "기부하기"
+
+#: templates/admin/sidebar.php:46
+msgid "Go PRO!"
+msgstr "프로 이동!"
+
+#: templates/admin/utilities.php:1
+msgid "Utilities"
+msgstr "도구"
+
+#: templates/admin/utilities.php:9
+msgid "Clear Cached Calendar Data"
+msgstr "캐시된 캘린더 데이터 지우기"
+
+#: templates/admin/utilities.php:10
+msgid ""
+"This will immediately clear all existing cached calendar data (purge "
+"transients), forcing WordPress to reload all calendars the next time they "
+"are viewed. Caching will then resume as before."
+msgstr ""
+"이렇게 하면 모든 기존 캐시된 캘린더 데이터(일시 적 제거)가 즉시 지워지며, 워"
+"드프레스는 다음에 볼 때 모든 일정을 다시 로드하도록 강요합니다. 캐싱은 이전"
+"과 같이 다시 시작됩니다."
+
+#: templates/admin/utilities.php:17
+msgid "ICS Feed URL Tester"
+msgstr "ICS 피드 URL 테스터"
+
+#: templates/admin/utilities.php:21
+msgid ""
+"If you are concerned that the plugin is not properly retrieving your feed, "
+"you can test the URL here. The raw data received by the plugin will be "
+"displayed below."
+msgstr ""
+"플러그인이 피드를 제대로 검색하지 못하는 것을 우려하는 경우 여기에서 URL을 테"
+"스트할 수 있습니다. 플러그인에서 받은 원시 데이터는 아래에 표시됩니다."
+
+#: templates/admin/utilities.php:28
+msgid "Enter feed URL..."
+msgstr "피드 URL입력..."
+
+#: templates/admin/utilities.php:28
+msgid "Test URL"
+msgstr "테스트 URL"
+
+#: templates/admin/utilities.php:35
+#, php-format
+msgid "%s received."
+msgstr "%s 받았습니다."
+
+#: templates/admin/utilities.php:39
+msgid "This does not appear to be a valid ICS feed URL."
+msgstr "유효한 ICS 피드 URL이 아닌 것 같습니다."
+
+#: templates/admin/utilities.php:48
+msgid "Could not retrieve data from the requested URL."
+msgstr "요청된 URL에서 데이터를 검색할 수 없습니다."
+
+#: templates/admin/utilities.php:53
+msgid ""
+"An unknown error occurred while attempting to retrieve the requested URL."
+msgstr "요청된 URL을 검색하는 동안 알 수 없는 오류가 발생했습니다."
+
+#: templates/calendar-list.php:43
+msgid "No events found."
+msgstr "일정이 없습니다."
+
+#: templates/calendar-list.php:247 templates/calendar-month.php:191
+#: templates/calendar-week.php:204
+msgid "All Day"
+msgstr "전일"
+
+#: templates/calendar-month.php:273 templates/calendar-week.php:289
+msgid "No events."
+msgstr "이벤트가 없습니다."
+
+#: templates/calendar-month.php:285
+msgid "No additional events this month."
+msgstr "이번 달에는 추가 이벤트가 없습니다."
+
+#: templates/calendar-week.php:70
+msgid "Last week"
+msgstr "지난주"
+
+#: templates/calendar-week.php:71
+msgid "This week"
+msgstr "이번주"
+
+#: templates/calendar-week.php:72
+msgid "Next week"
+msgstr "다음 주"
+
+#. Plugin Name of the plugin/theme
+msgid "ICS Calendar"
+msgstr "ICS Calendar"
+
+#. Description of the plugin/theme
+msgid "Embed a live updating iCal (ICS) feed in any page using a shortcode."
+msgstr ""
+"단축코드를 사용하여 모든 페이지에 ICal(ICal) 피드를 실시간으로 업데이트합니"
+"다."
+
+#. Author of the plugin/theme
+msgid "Room 34 Creative Services, LLC"
+msgstr "Room 34 Creative Services, LLC"
+
+#. Author URI of the plugin/theme
+msgid "https://icscalendar.com"
+msgstr "https://icscalendar.com"
+
+#~ msgid "Add ICS Calendar"
+#~ msgstr "ICS 캘린더 추가"
+
+#~ msgid "Your site is currently using a UTC offset-based timezone setting."
+#~ msgstr "사이트는 현재 UTC 오프셋 기반 표준 시간대 설정을 사용하고 있습니다."
+
+#, php-format
+#~ msgid ""
+#~ "This can produce time display errors in the %s plugin in locations that "
+#~ "observe Daylight Saving Time."
+#~ msgstr ""
+#~ "이것은 일광 절약 시간을 관찰 하는 위치에 %s 플러그인에 시간 표시 오류를 생"
+#~ "성할 수 있습니다."
+
+#, php-format
+#~ msgid ""
+#~ "Please %1$schange your timezone setting%2$s to the city nearest your "
+#~ "location, in the same timezone, for proper time display."
+#~ msgstr "적절한 시간대에 있는 시간대 설정%2$s %1$s 변경하십시오."
+
+#, php-format
+#~ msgid ""
+#~ "See the %1$sPHP documentation%2$s for additional information on this "
+#~ "issue."
+#~ msgstr "이 문제에 대한 자세한 내용은 %1$sPHP 설명서%2$s 참조하세요."
+
+#~ msgid "Thank you for upgrading to ICS Calendar version 7.0!"
+#~ msgstr "ICS 캘린더 버전 7.0으로 업그레이드해 주셔서 감사합니다!"
+
+#, php-format
+#~ msgid ""
+#~ "%sPlease note that this version includes a major rewrite of the logic for "
+#~ "formatting event dates and times.%s We have made every effort to ensure "
+#~ "that the new functionality is stable and reliable, but if you encounter "
+#~ "any issues, such as incorrect dates and times, headers displaying the "
+#~ "wrong month, or page layout issues, please contact us at %s and we will "
+#~ "assist you as quickly as possible. Please include the contents of the "
+#~ "%sSystem Report%s in your email."
+#~ msgstr ""
+#~ "%s 이 버전에는 이벤트 날짜 와 시간 서식을 지정하기 위한 논리의 주요 재작성"
+#~ "이 포함되어 있습니다. %s 우리는 새로운 기능이 안정적이고 신뢰할 수 있도록 "
+#~ "모든 노력을 기울였지만 잘못된 날짜와 시간, 잘못된 달을 표시하는 헤더 또는 "
+#~ "페이지 레이아웃 문제와 같은 문제가 발생하면 %s 연락하십시오. 이메일에는 %s"
+#~ "시스템 보고서%s 내용을 포함해 주십시오."
+
+#~ msgid ""
+#~ "No events found in ICS feed(s). This may mean your calendar contains no "
+#~ "events, your feed URL may be incorrect, or your shortcode may have other "
+#~ "configuration errors. Set debug=\"true\" in shortcode for additional "
+#~ "details."
+#~ msgstr ""
+#~ "ICS 피드에서 찾을 수 있는 이벤트가 없습니다. 즉, 캘린더에 이벤트가 없거나 "
+#~ "피드 URL이 올바르지 않거나 단축코드가 다른 구성 오류가 있을 수 있습니다. "
+#~ "추가 세부 사항에 대한 단축코드에서 debug=\"true\" 를 설정합니다."
