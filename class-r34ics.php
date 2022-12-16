@@ -422,6 +422,7 @@ class R34ICS {
 					}
 					break;
 				case 'list':
+				case 'masonry':
 					// For $reverse to function properly, $pastdays and $limitdays must be equal
 					if (!empty($reverse)) {
 						if (!empty($pastdays)) { $limitdays = $pastdays; }
@@ -470,6 +471,7 @@ class R34ICS {
 					break;
 				case 'list':
 				case 'month':
+				case 'masonry':
 					$ics_data['earliest'] = substr(($first_date ?? ''),0,6);
 					$ics_data['latest'] = !empty($limitdayscustom) ? r34ics_date('Ym', $first_date, null, '+' . intval($limitdays-1) . ' days') : substr(($limit_date ?? ''),0,6);
 					break;
@@ -782,6 +784,9 @@ class R34ICS {
 				break;
 			case 'month':
 				include(plugin_dir_path(__FILE__) . 'templates/calendar-month.php');
+				break;
+			case 'masonry':
+				include(plugin_dir_path(__FILE__) . 'templates/calendar-masonry.php');
 				break;
 			default:
 				// Handle other views externally

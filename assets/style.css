@@ -501,6 +501,15 @@ button:not(.components-button):not([role=presentation]).r34ics_event_ics_downloa
 			margin-bottom: 0.5em;
 		}
 
+.ics-calendar-masonry-grid-sizer,
+.ics-calendar-masonry-grid-item {
+	width: 24%;
+	margin-bottom: 10px;
+}
+
+.ics-calendar-masonry-gutter {
+	width: 1%;
+}
 
 /* Non-phone breakpoint */
 @media screen and (min-width: 783px) {

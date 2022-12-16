@@ -30,16 +30,18 @@ Domain Path: /i18n/languages/
 // Don't load directly
 if (!defined('ABSPATH')) { exit; }
 
+define( 'R34ICS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'R34ICS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 // Load required files
-require_once(plugin_dir_path(__FILE__) . 'class-r34ics.php');
-require_once(plugin_dir_path(__FILE__) . 'functions.php');
-require_once(plugin_dir_path(__FILE__) . 'r34ics-ajax.php');
+require_once(R34ICS_PLUGIN_DIR . 'class-r34ics.php');
+require_once(R34ICS_PLUGIN_DIR . 'functions.php');
+require_once(R34ICS_PLUGIN_DIR . 'r34ics-ajax.php');
 
 
 // Backward compatibility for WP < 5.3
 if (!function_exists('wp_date')) {
-	require_once(plugin_dir_path(__FILE__) . 'compatibility.php');
+	require_once(R34ICS_PLUGIN_DIR . 'compatibility.php');
 }
 
 
@@ -52,7 +54,7 @@ function r34ics_plugins_loaded() {
 	$R34ICS = new R34ICS();
 	
 	// Load text domain
-	load_plugin_textdomain('r34ics', false, basename(plugin_dir_path(__FILE__)) . '/i18n/languages/');
+	load_plugin_textdomain('r34ics', false, basename(R34ICS_PLUGIN_DIR) . '/i18n/languages/');
 	
 	// Conditionally run update function
 	if (is_admin() && version_compare(get_option('r34ics_version'), @R34ICS::VERSION, '<')) { r34ics_update(); }
