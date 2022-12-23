@@ -6,7 +6,7 @@ if (!defined('ABSPATH')) { exit; }
 class R34ICS {
 
 	const NAME = 'ICS Calendar';
-	const VERSION = '10.2.2';
+	const VERSION = '10.3.0';
 	
 	public $version = R34ICS::VERSION; // Retained for backwards compatibility
 
@@ -36,6 +36,7 @@ class R34ICS {
 	protected $parser_loaded = false;
 
 	protected $shortcode_defaults = array(
+		'ajax' => false,
 		'arrayonly' => false,
 		'attach' => '',
 		'basicauth' => false,
@@ -884,13 +885,11 @@ class R34ICS {
 			wp_enqueue_style('ics-calendar-debug', plugin_dir_url(__FILE__) . 'assets/debug.css', false, $this->version);
 		}
 		// ICS Calendar AJAX
-		/*
 		wp_enqueue_script('ics-calendar-ajax', plugin_dir_url(__FILE__) . 'assets/r34ics-ajax.js', array('jquery', 'ics-calendar'), $this->version, true);
 		wp_localize_script('ics-calendar-ajax', 'r34ics_ajax_obj', array(
 			'ajaxurl' => admin_url('admin-ajax.php'),
-			'event' => null,
+			'r34ics_nonce' => wp_create_nonce('r34ics_nonce'),
 		));
-		*/
 	}
 	
 	
@@ -1252,7 +1251,7 @@ class R34ICS {
 		
 		// Workaround for shortcodes that contain HTML in the url attribute
 		if (empty($atts['url']) || strpos($atts['url'], '<') !== false) { $atts['url'] = r34ics_shortcode_url_fix($atts); }
-
+		
 		// Extract attributes
 		extract(shortcode_atts($this->shortcode_defaults, $atts, 'ics_calendar'));
 		
@@ -1266,6 +1265,7 @@ class R34ICS {
 		
 		// Assemble display arguments array
 		$args = array(
+			'ajax' => r34ics_boolean_check($ajax),
 			'arrayonly' => r34ics_boolean_check($arrayonly),
 			'attach' => (in_array($attach, array('','0','false','1','true','image','download')) ? $attach : null),
 			'basicauth' => r34ics_boolean_check($basicauth),
@@ -1330,9 +1330,19 @@ class R34ICS {
 			'whitetext' => r34ics_boolean_check($whitetext),
 		);
 		$args = apply_filters('r34ics_display_calendar_args', $args, $atts);
+		
+		// AJAX mode
+		if (!empty($ajax)) {
+			$args['url'] = r34ics_url_uniqid_array_convert($args['url']);
+			echo '<div class="r34ics-ajax-container" data-args="' . esc_attr(json_encode($args)) . '"></div>';
+		}
 
-		// Get the calendar output
-		$this->display_calendar($args);
+		// Standard mode
+		else {
+			$this->display_calendar($args);
+		}
+
+		// Return the shortcode output
 		return ob_get_clean();
 	}
 

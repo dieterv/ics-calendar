@@ -59,7 +59,7 @@ if ($args['toggle'] === 'lightbox') {
 		</nav>
 		<?php
 	}
-	?>	
+	?>
 
 	<select class="ics-calendar-select r34ics-hidden-on-load<?php if (!empty($args['monthnav']) && $args['monthnav'] == 'arrows') { echo ' hidden'; } ?>" autocomplete="off" data-this-month="<?php echo esc_attr($this_ym); ?>">
 		<?php

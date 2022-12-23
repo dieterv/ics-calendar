@@ -3,141 +3,12 @@ ICS Calendar front end scripts
 https://icscalendar.com
 */
 
-
-function r34ics_is_phone() {
-	return window.innerWidth <= 782;
-}
-
-
-function r34ics_maybe_skip_to_next_month() {
-	if (r34ics_is_phone() || jQuery('.ics-calendar.layout-month[data-month-table-list-toggle="list"]').length > 0) {
-		jQuery('.ics-calendar:not(.nomobile).layout-month').each(function() {
-			// Only change if this month has no/no more events, and next month *does* have events
-			if	(
-					jQuery(this).find('.ics-calendar-month-wrapper:visible').find('.no_events, .no_additional_events').length > 0 &&
-					jQuery(this).find('.ics-calendar-month-wrapper:visible').next().find('.no_events').length == 0
-				)
-			{
-				var r34ics_cal_select = jQuery(this).closest('.ics-calendar').find('.ics-calendar-select');
-				var next_val = r34ics_cal_select.find('option[selected]').next().val();
-				r34ics_cal_select.val(next_val).trigger('change');
-			}
-		});
-	}
-}
-
-
-// Update the address bar with a new query string value
-// Note: Assumes key does not exist as a substring at the end of any other keys!
-function r34ics_qs_update(key, val, remove) {
-	if (history.pushState && val != null) {
-		var qs, re;
-		// We only want to remove this item, not update it
-		if (remove == true) {
-			// Check if it's actually present in the current query string first
-			if (location.search.indexOf(key + '=') != -1) {
-				re = new RegExp(key + '=[^&]*','g');
-				qs = location.search.replace(re, '');
-				// Strip the trailing ampersand if present
-				if (qs.lastIndexOf('&') == qs.length - 1) {
-					qs = qs.slice(0, -1);
-				}
-			}
-		}
-		// There is no query string; create it
-		else if (location.search == '') {
-			qs = '?' + key + '=' + val;
-		}
-		// This item is in the query string already; update it
-		else if (location.search.indexOf(key + '=') != -1) {
-			re = new RegExp(key + '=[^&]*','g');
-			qs = location.search.replace(re, key + '=' + val);
-		}
-		// This item is not in the query string; append it
-		else {
-			// There's already a trailing ampersand
-			if (location.search.lastIndexOf('&') == location.search.length - 1) {
-				qs = location.search + key + '=' + val;
-			}
-			// There is not already a trailing ampersand
-			else {
-				qs = location.search + '&' + key + '=' + val;
-			}
-		}
-		window.history.pushState({}, document.title, qs);
-	}
-}
-
-
-// Get the value for a given key in the query string
-function r34ics_qs_val(key) {
-	var arr = location.search.replace('?','').split('&'), params = [], item, i;
-	for (i = 0; i < arr.length; i++) {
-		item = arr[i].split('=');
-		params[item[0]] = item[1];
-	}
-	// Return sanitized value
-	return jQuery('<div>').text(params[key]).html();
-}
-
-
-function r34ics_show_hide_headers(elem) {
-	if (typeof elem == 'undefined' || elem == null) { elem = '.ics-calendar'; }
-	// First we restore all of the headers we may be hiding
-	jQuery(elem + ' .ics-calendar-list-wrapper h4, ' + elem + ':not(.monthnav-compact) .ics-calendar-label, ' + elem + ' .ics-calendar-month-grid .day').show().removeClass('nomobile').removeClass('hidden_in_list');
-	// In list view, hide/show the day header
-	if (jQuery('.ics-calendar.layout-list').length > 0) {
-		jQuery(elem + ' .ics-calendar-list-wrapper h4').each(function() {
-			if (jQuery(this).next('dl').find('.event:visible').length == 0) {
-				jQuery(this).hide();
-			}
-			else {
-				jQuery(this).show();
-			}
-		});
-		// And also hide/show the month header
-		jQuery(elem + ' .ics-calendar-list-wrapper .ics-calendar-label').each(function() {
-			if (jQuery(this).siblings('.ics-calendar-date-wrapper').children('h4:visible').length == 0) {
-				jQuery(this).hide();
-			}
-			else {
-				jQuery(this).show();
-			}
-		});
-	}
-	// In month view list (phone breakpoint), hide the day header
-	// Also applies to Pro in month view with table/list toggle set to list
-	if (jQuery('body.r34ics_phone .ics-calendar.layout-month').length > 0 || jQuery(elem).data('month-table-list-toggle') == 'list') {
-		jQuery(elem + ' .ics-calendar-month-grid .events').each(function() {
-			if (jQuery(this).find('.event:visible').length == 0) {
-				jQuery(this).siblings('.day').addClass('nomobile').addClass('hidden_in_list');
-			}
-			else {
-				jQuery(this).siblings('.day').removeClass('nomobile').removeClass('hidden_in_list');
-			}
-		});
-		// And also hide/show the month header
-		jQuery(elem + ' .ics-calendar-month-wrapper .ics-calendar-month-grid').each(function() {
-			if (jQuery(this).find('.event:visible').length == 0) {
-				jQuery(this).siblings('.ics-calendar-label').addClass('nomobile').addClass('hidden_in_list');
-			}
-			else {
-				jQuery(this).siblings('.ics-calendar-label').removeClass('nomobile').removeClass('hidden_in_list');
-			}
-		});
-	}
-}
-
-
-jQuery(function() {
-
+function r34ics_init() {
 
 	// VIEW: ALL
 
-
 	// Add .r34ics_phone class to body if we're on a phone screen size
 	if (r34ics_is_phone()) { jQuery('body').addClass('r34ics_phone'); }
-
 
 	// Handle individual event ICS downloads
 	jQuery(document).on('click', '.r34ics_event_ics_download', function() {
@@ -161,21 +32,18 @@ jQuery(function() {
 		}
 		return false;
 	});
-	
-	
+
 	// Show/hide headers on mobile view when select menu changes
 	jQuery(document).on('change', '.ics-calendar-select', function() {
 		r34ics_show_hide_headers();
 	});
-	
-	
+
 	// Show/hide headers on HTML5 <details> tag toggle
 	// Note: Can't apply dynamically because toggle event ONLY fires on details, not document
 	jQuery('details').on('toggle', function() {
 		if (jQuery(this).has('.ics-calendar')) { r34ics_show_hide_headers(); }
 	});
 
-	
 	// Handle "toggle" functionality for event descriptions
 	/*
 	Note: .toggle class was changed to .r34ics_toggle in templates
@@ -216,7 +84,6 @@ jQuery(function() {
 		});
 	}
 
-
 	// Make offsite links open in new tab
 	jQuery('.ics-calendar:not(.sametab) a').each(function() {
 		if (jQuery(this).attr('target') == '_blank') {
@@ -230,7 +97,6 @@ jQuery(function() {
 			jQuery(this).addClass('offsite-link').attr('target','_blank');
 		}
 	});
-
 
 	// Toggle color-coded multi-feed calendars
 	jQuery('.ics-calendar-color-key-toggle').on('change', function() {
@@ -280,10 +146,8 @@ jQuery(function() {
 		}
 	});
 
-
 	// VIEW: WEEK
 	// Outer section wrapper has classes .ics-calendar.layout-week
-
 
 	if (jQuery('.ics-calendar.layout-week').length > 0) {
 		// Week select interactivity
@@ -326,10 +190,8 @@ jQuery(function() {
 		});
 	}
 
-
 	// VIEW: LIST
 	// Outer section wrapper has classes .ics-calendar.layout-list
-
 
 	if (jQuery('.ics-calendar.layout-list').length > 0) {
 		jQuery('.ics-calendar.layout-list .descloc_toggle_excerpt').on('click', function() {
@@ -337,10 +199,8 @@ jQuery(function() {
 		});
 	}
 
-
 	// VIEW: MONTH
 	// Outer section wrapper has classes .ics-calendar.layout-month
-
 
 	if (jQuery('.ics-calendar.layout-month').length > 0) {
 		// Month select interactivity
@@ -434,23 +294,148 @@ jQuery(function() {
 		r34ics_maybe_skip_to_next_month();
 	}
 
-
 	// DEBUGGER
 	jQuery(".r34ics_debug_toggle").on("click", function() {
 		if (jQuery(".r34ics_debug_wrapper").hasClass("minimized")) { jQuery(".r34ics_debug_wrapper").removeClass("minimized"); }
 		else { jQuery(".r34ics_debug_wrapper").addClass("minimized"); }
 	});
 
+}
+
+function r34ics_is_phone() {
+	return window.innerWidth <= 782;
+}
+
+function r34ics_maybe_skip_to_next_month() {
+	if (r34ics_is_phone() || jQuery('.ics-calendar.layout-month[data-month-table-list-toggle="list"]').length > 0) {
+		jQuery('.ics-calendar:not(.nomobile).layout-month').each(function() {
+			// Only change if this month has no/no more events, and next month *does* have events
+			if	(
+					jQuery(this).find('.ics-calendar-month-wrapper:visible').find('.no_events, .no_additional_events').length > 0 &&
+					jQuery(this).find('.ics-calendar-month-wrapper:visible').next().find('.no_events').length == 0
+				)
+			{
+				var r34ics_cal_select = jQuery(this).closest('.ics-calendar').find('.ics-calendar-select');
+				var next_val = r34ics_cal_select.find('option[selected]').next().val();
+				r34ics_cal_select.val(next_val).trigger('change');
+			}
+		});
+	}
+}
+
+// Update the address bar with a new query string value
+// Note: Assumes key does not exist as a substring at the end of any other keys!
+function r34ics_qs_update(key, val, remove) {
+	if (history.pushState && val != null) {
+		var qs, re;
+		// We only want to remove this item, not update it
+		if (remove == true) {
+			// Check if it's actually present in the current query string first
+			if (location.search.indexOf(key + '=') != -1) {
+				re = new RegExp(key + '=[^&]*','g');
+				qs = location.search.replace(re, '');
+				// Strip the trailing ampersand if present
+				if (qs.lastIndexOf('&') == qs.length - 1) {
+					qs = qs.slice(0, -1);
+				}
+			}
+		}
+		// There is no query string; create it
+		else if (location.search == '') {
+			qs = '?' + key + '=' + val;
+		}
+		// This item is in the query string already; update it
+		else if (location.search.indexOf(key + '=') != -1) {
+			re = new RegExp(key + '=[^&]*','g');
+			qs = location.search.replace(re, key + '=' + val);
+		}
+		// This item is not in the query string; append it
+		else {
+			// There's already a trailing ampersand
+			if (location.search.lastIndexOf('&') == location.search.length - 1) {
+				qs = location.search + key + '=' + val;
+			}
+			// There is not already a trailing ampersand
+			else {
+				qs = location.search + '&' + key + '=' + val;
+			}
+		}
+		window.history.pushState({}, document.title, qs);
+	}
+}
+
+// Get the value for a given key in the query string
+function r34ics_qs_val(key) {
+	var arr = location.search.replace('?','').split('&'), params = [], item, i;
+	for (i = 0; i < arr.length; i++) {
+		item = arr[i].split('=');
+		params[item[0]] = item[1];
+	}
+	// Return sanitized value
+	return jQuery('<div>').text(params[key]).html();
+}
+
+function r34ics_show_hide_headers(elem) {
+	if (typeof elem == 'undefined' || elem == null) { elem = '.ics-calendar'; }
+	// First we restore all of the headers we may be hiding
+	jQuery(elem + ' .ics-calendar-list-wrapper h4, ' + elem + ':not(.monthnav-compact) .ics-calendar-label, ' + elem + ' .ics-calendar-month-grid .day').show().removeClass('nomobile').removeClass('hidden_in_list');
+	// In list view, hide/show the day header
+	if (jQuery('.ics-calendar.layout-list').length > 0) {
+		jQuery(elem + ' .ics-calendar-list-wrapper h4').each(function() {
+			if (jQuery(this).next('dl').find('.event:visible').length == 0) {
+				jQuery(this).hide();
+			}
+			else {
+				jQuery(this).show();
+			}
+		});
+		// And also hide/show the month header
+		jQuery(elem + ' .ics-calendar-list-wrapper .ics-calendar-label').each(function() {
+			if (jQuery(this).siblings('.ics-calendar-date-wrapper').children('h4:visible').length == 0) {
+				jQuery(this).hide();
+			}
+			else {
+				jQuery(this).show();
+			}
+		});
+	}
+	// In month view list (phone breakpoint), hide the day header
+	// Also applies to Pro in month view with table/list toggle set to list
+	if (jQuery('body.r34ics_phone .ics-calendar.layout-month').length > 0 || jQuery(elem).data('month-table-list-toggle') == 'list') {
+		jQuery(elem + ' .ics-calendar-month-grid .events').each(function() {
+			if (jQuery(this).find('.event:visible').length == 0) {
+				jQuery(this).siblings('.day').addClass('nomobile').addClass('hidden_in_list');
+			}
+			else {
+				jQuery(this).siblings('.day').removeClass('nomobile').removeClass('hidden_in_list');
+			}
+		});
+		// And also hide/show the month header
+		jQuery(elem + ' .ics-calendar-month-wrapper .ics-calendar-month-grid').each(function() {
+			if (jQuery(this).find('.event:visible').length == 0) {
+				jQuery(this).siblings('.ics-calendar-label').addClass('nomobile').addClass('hidden_in_list');
+			}
+			else {
+				jQuery(this).siblings('.ics-calendar-label').removeClass('nomobile').removeClass('hidden_in_list');
+			}
+		});
+	}
+}
+
+jQuery(function() {
+
+	// Initialize ICS Calendar functionality if the initial DOM contains a calendar
+	// AJAX-loaded calendars also fire off this function as needed
+	if (jQuery('.ics-calendar').length > 0) {
+		r34ics_init();
+	}
 
 });
 
-
 jQuery(window).on('load', function() {
-
 
 	// Show/hide headers on initial load
 	r34ics_show_hide_headers();
-
 
 	// Show/hide headers when user clicks anything, if the page loaded with a hidden calendar, and a calendar is visible after click
 	if (jQuery('.ics-calendar').not(':visible').length > 0) {
@@ -459,23 +444,17 @@ jQuery(window).on('load', function() {
 		});
 	}
 
-
 });
 
-
 jQuery(window).on('resize', function() {
-
 
 	// Add/remove .r34ics_phone class on body
 	if (r34ics_is_phone()) { jQuery('body').addClass('r34ics_phone'); } else { jQuery('body').removeClass('r34ics_phone'); }
 
-
 	// Show/hide headers on resize
 	r34ics_show_hide_headers();
 
-
 	// Automatically jump to next month in mobile view if no events
 	r34ics_maybe_skip_to_next_month();
-
 
 });

@@ -823,6 +823,14 @@ function r34ics_space_pipe_explode($str='') {
 
 // Prepare a system report for diagnostic support
 function r34ics_system_report($echo=true) {
+	// Prepare OS identifier string
+	$os = php_uname('s') . ' / ';
+	if (file_exists('/etc/issue')) {
+		$etc_issue = file_get_contents('/etc/issue');
+		$os .= trim(substr($etc_issue, 0, strpos($etc_issue, '\\'))) . ' / ';
+	}
+	$os .= php_uname('r') . ' / ' . php_uname('m');
+
 	// Get info about current theme
 	$theme = wp_get_theme();
 
@@ -831,64 +839,68 @@ function r34ics_system_report($echo=true) {
 	$active_plugins = get_option('active_plugins');
 	$plugin_list = array();
 	foreach ((array)$active_plugins as $plugin) {
-		$plugin_list[$plugins[$plugin]['Name']] = $plugins[$plugin]['Version'];
+		$plugin_list[] = $plugins[$plugin]['Name'] . ' ' . $plugins[$plugin]['Version'];
 	}
-	
-	// Get system timezone
-	// Source: https://www.php.net/manual/en/function.date-default-timezone-get.php#125626
-	$system_timezone = 'Not available';
-	// Doesn't work on Windows servers, so we'll just bypass it; also some Linux servers may not have shell_exec() enabled
-	if (strpos(php_uname('s'), 'Windows') === false && function_exists('shell_exec')) {
-		$sys_timedatectl = trim(shell_exec('timedatectl | grep -i zone: 2>/dev/null'));
-		$system_time_array = explode(' ', $sys_timedatectl);
-		if (isset($system_time_array[2])) {
-			$system_timezone = $system_time_array[2];
-		}
-	}
-	
-	// Prepare cURL info
-	$curl_info = curl_version();
-	unset($curl_info['protocols']);
-
+		
 	// Gather all report data
+	global $wpdb;
 	$report = array(
-		'Site' => get_bloginfo('name'),
-		'URL' => get_bloginfo('wpurl'),
+		'Site' => get_bloginfo('name') . ' / ' . get_bloginfo('wpurl'),
 		'ICS Calendar' => get_option('r34ics_version'),
 		'WordPress' => get_bloginfo('version'),
-		'Multisite' => (function_exists('get_sites') ? count(get_sites()) : 0),
-		'PHP' => phpversion(),
-		'Server Software' => $_SERVER['SERVER_SOFTWARE'],
-		'OS' => php_uname('s') . ' ' . php_uname('r') . ' ' . php_uname('m'),
+		'Multisite' => (function_exists('get_sites') ? count(get_sites()) : 'no'),
 		'Language' => get_bloginfo('language'),
-		'Charset' => get_bloginfo('charset'),
-		'System Timezone' => $system_timezone,
 		'WordPress Timezone' => get_option('timezone_string'),
 		'Active Theme' => $theme->__get('name') . ' v.' . $theme->__get('version') . ' (' . pathinfo($theme->__get('template_dir'), PATHINFO_BASENAME) . ')',
 		'Active Plugins' => $plugin_list,
-		'cURL' => $curl_info,
-		'PHP Settings' => array(
-			'allow_url_fopen' => intval(ini_get('allow_url_fopen')),
-			'max_execution_time' => ini_get('max_execution_time'),
-			'memory_limit' => ini_get('memory_limit'),
+		'Server' => array(
+			$os,
+			$_SERVER['SERVER_SOFTWARE'] . ' / ' . $_SERVER['SERVER_PROTOCOL'] . ' / ' . (!empty($_SERVER['LOCAL_ADDR']) ? $_SERVER['LOCAL_ADDR'] : $_SERVER['SERVER_ADDR']) . ':' . $_SERVER['SERVER_PORT'],
+			'MySQL ' . $wpdb->dbh->server_version . ' / ' . $wpdb->dbh->host_info,
+			'PHP ' . phpversion(),
 		),
 	);
 	
+	// Add PHP settings
+	$php_settings = array(
+		'allow_url_fopen',
+		'date.timezone',
+		'default_charset',
+		'display_errors',
+		'max_execution_time',
+		'memory_limit',
+	);
+	foreach ((array)$php_settings as $setting_name) {
+		$report['PHP Settings'][$setting_name] = ini_get($setting_name);
+	}
+		
+	// Add cURL settings
+	$curl_settings = array(
+		'version',
+		'host',
+		'ssl_version',
+		'libssh_version',
+	);
+	$curl_info = curl_version();
+	foreach ((array)$curl_settings as $setting_name) {
+		$report['cURL'][$setting_name] = $curl_info[$setting_name];
+	}
+		
 	// Add external report details
 	$report = apply_filters('r34ics_system_report_array', $report);
 
 	// Output report data
 	if (!empty($echo)) {
 		foreach ((array)$report as $key => $value) {
-			echo wp_kses_post($key) . ':&nbsp;&nbsp;';
+			if (!is_int($key)) { echo wp_kses_post($key) . ': '; }
 			if (is_array($value)) {
 				echo "\n";
 				foreach ((array)$value as $key2 => $value2) {
-					echo '&nbsp;&nbsp;&nbsp;&nbsp;' . wp_kses_post($key2) . ':&nbsp;&nbsp;';
+					echo '&nbsp;&nbsp;' . (!is_int($key2) ? wp_kses_post($key2) . ': ' : '');
 					if (is_array($value2)) {
 						echo "\n";
 						foreach ((array)$value2 as $key3 => $value3) {
-							echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . wp_kses_post($key3) . ':&nbsp;&nbsp;';
+							echo '&nbsp;&nbsp;&nbsp;&nbsp;' . (!is_int($key3) ? wp_kses_post($key3) . ': ' : '');
 							if (is_array($value3)) {
 								print_r($value3);
 							}
@@ -1021,6 +1033,7 @@ function r34ics_uniqid_url($uniqid='') {
 
 // This function has been replaced with the protected method R34ICS::_url_get_contents()
 // There is no graceful deprecation, as the function had no legitimate uses outside of this plugin
+// Workaround logic can be removed after 2023.01.27
 function r34ics_url_get_contents($deprecated_1=null, $deprecated_2=null, $deprecated_3=null, $deprecated_4=null, $deprecated_5=null) {
 	// Workaround for R34ICSPro::_verify_license() in versions before 3.12.0
 	if (!empty($deprecated_1) && strpos((string)$deprecated_1, 'https://icscalendar.com/') !== false) {
@@ -1045,6 +1058,21 @@ function r34ics_url_uniqid($url='') {
 	}
 	// If the option does not exist, we return false
 	return false;
+}
+
+
+// Convert a pipe- or space-delimited list of URLs or uniqids to the other format
+function r34ics_url_uniqid_array_convert($items='') {
+	$items = (array)r34ics_space_pipe_explode($items);
+	foreach ((array)$items as $key => $item) {
+		if (strpos($item,'http') === 0 || strpos($item,'webcal://') === 0) {
+			$items[$key] = r34ics_url_uniqid($item);
+		}
+		else {
+			$items[$key] = r34ics_uniqid_url($item);
+		}
+	}
+	return implode('|', $items);
 }
 
 
