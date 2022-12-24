@@ -1042,7 +1042,7 @@ function r34ics_url_get_contents($deprecated_1=null, $deprecated_2=null, $deprec
 		$api_response->status_check = 'active';
 		return json_encode($api_response);
 	}
-	trigger_error(__('The r34ics_url_get_contents() function is no longer supported.', 'r34ics'), E_USER_NOTICE);
+	trigger_error(__('The r34ics_url_get_contents() function is no longer supported.', 'r34ics'), E_USER_DEPRECATED);
 	return false;
 }
 

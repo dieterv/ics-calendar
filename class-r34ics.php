@@ -6,7 +6,7 @@ if (!defined('ABSPATH')) { exit; }
 class R34ICS {
 
 	const NAME = 'ICS Calendar';
-	const VERSION = '10.3.0';
+	const VERSION = '10.3.1';
 	
 	public $version = R34ICS::VERSION; // Retained for backwards compatibility
 
@@ -1260,7 +1260,13 @@ class R34ICS {
 		
 		// Report deprecated attributes
 		if (!empty($currentweek)) {
-			trigger_error(__('The "currentweek" shortcode attribute is deprecated. Please use view="week" in your shortcode instead.', 'r34ics'), E_USER_NOTICE);
+			trigger_error(__('The "currentweek" shortcode attribute is deprecated. Please use view="week" in your shortcode instead.', 'r34ics'), E_USER_DEPRECATED);
+		}
+		if (!empty($legendinline)) {
+			trigger_error(__('The "legendinline" shortcode attribute is deprecated. Please use legendstyle="inline" in your shortcode instead.', 'r34ics'), E_USER_DEPRECATED);
+		}
+		if (!empty($limitdayscustom)) {
+			trigger_error(__('The "limitdayscustom" setting is for internal use within the ICS Calendar plugin, and should not appear directly in your shortcode.', 'r34ics'), E_USER_DEPRECATED);
 		}
 		
 		// Assemble display arguments array
@@ -1329,12 +1335,15 @@ class R34ICS {
 			'weeknumbers' => r34ics_boolean_check($weeknumbers),
 			'whitetext' => r34ics_boolean_check($whitetext),
 		);
+		
+		// Apply external filters to $args array
+		// IMPORTANT: Any conditionals after this point need to use $args rather than the extracted variables!
 		$args = apply_filters('r34ics_display_calendar_args', $args, $atts);
 		
 		// AJAX mode
-		if (!empty($ajax)) {
+		if (!empty($args['ajax'])) {
 			$args['url'] = r34ics_url_uniqid_array_convert($args['url']);
-			echo '<div class="r34ics-ajax-container" data-args="' . esc_attr(json_encode($args)) . '"></div>';
+			echo '<div class="r34ics-ajax-container loading" data-args="' . esc_attr(json_encode($args)) . '">&nbsp;</div>';
 		}
 
 		// Standard mode

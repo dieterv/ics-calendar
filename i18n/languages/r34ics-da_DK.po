@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ICS Calendar\n"
-"POT-Creation-Date: 2022-11-07 12:12-0600\n"
-"PO-Revision-Date: 2022-11-07 12:12-0600\n"
+"POT-Creation-Date: 2022-12-23 11:22-0600\n"
+"PO-Revision-Date: 2022-12-23 11:22-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: da_DK\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: ics-calendar.php\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: class-r34ics.php:194
+#: class-r34ics.php:195
 #, php-format
 msgid ""
 "The %1$s plugin requires either the PHP cURL extensions, or the %2$s PHP "
@@ -32,7 +32,7 @@ msgstr ""
 "indstillingen %2$s PHP er slået til. Du bedes opdatere indstillingerne i din "
 "%3$s-fil eller kontakte din hostingudbyder for at få hjælp."
 
-#: class-r34ics.php:203
+#: class-r34ics.php:204
 #, php-format
 msgid ""
 "%1$sYour site is currently using a UTC offset-based timezone setting.%2$s "
@@ -49,29 +49,29 @@ msgstr ""
 "tidsvisning. Se vores %6$sdokumentation%7$s for yderligere oplysninger om "
 "dette problem."
 
-#: class-r34ics.php:221
+#: class-r34ics.php:222
 #, php-format
 msgid "Cleared %1$s %2$s transient(s)."
 msgstr "Ryddet %1$s %2$s transient(er)."
 
-#: class-r34ics.php:228
+#: class-r34ics.php:229
 #, php-format
 msgid "No %1$s transients were found."
 msgstr "Der blev ikke fundet nogen %1$s transienter."
 
-#: class-r34ics.php:250 templates/admin/sidebar.php:3
+#: class-r34ics.php:251 templates/admin/sidebar.php:3
 msgid "User Guide"
 msgstr "Brugervejledning"
 
-#: class-r34ics.php:252 templates/admin/sidebar.php:36
+#: class-r34ics.php:253 templates/admin/sidebar.php:15
 msgid "Upgrade to PRO!"
 msgstr "Opgrader til PRO!"
 
-#: class-r34ics.php:270
+#: class-r34ics.php:271
 msgid "Show/hide all"
 msgstr "Vis/skjul alle"
 
-#: class-r34ics.php:533
+#: class-r34ics.php:539
 msgid ""
 "ICS file could not be retrieved or was empty. Please verify URL is correct, "
 "and check your php.ini configuration to verify either cURL or "
@@ -85,88 +85,104 @@ msgstr ""
 "afgrænse flere webadresser, kan du også prøve at bruge pipe-tegnet i stedet. "
 "Berørt URL-adresse:"
 
-#: class-r34ics.php:700
+#: class-r34ics.php:706
 msgid "Ends"
 msgstr "Slutter"
 
-#: class-r34ics.php:872
+#: class-r34ics.php:879
 msgid "Hide past events"
 msgstr "Skjule tidligere begivenheder"
 
-#: class-r34ics.php:873 templates/calendar-month.php:83
+#: class-r34ics.php:880 templates/calendar-month.php:83
 #: templates/calendar-week.php:80
 msgid "Show past events"
 msgstr "Vis tidligere begivenheder"
 
-#: class-r34ics.php:955
+#: class-r34ics.php:960
 msgid "Click for more..."
 msgstr "Klik for mere..."
 
-#: class-r34ics.php:988
+#: class-r34ics.php:993
 msgid "Save to your calendar"
 msgstr "Gem i din kalender"
 
-#: class-r34ics.php:988
+#: class-r34ics.php:993
 msgid "Download"
 msgstr "Download"
 
-#: class-r34ics.php:1064
+#: class-r34ics.php:1069
 msgid "Cancelled"
 msgstr "Annulleret"
 
-#: class-r34ics.php:1258
+#: class-r34ics.php:1263
 msgid ""
-"The \"currentweek\" shortcode attribute is deprecated. Please use view=\"week"
-"\" in your shortcode instead."
+"The \"currentweek\" shortcode attribute is deprecated. Please use "
+"view=\"week\" in your shortcode instead."
 msgstr ""
 "Attributten \"currentweek\" frarådes. Brug venligst view=\"week\" i din "
 "kortkode i stedet."
 
-#: class-r34ics.php:1429
+#: class-r34ics.php:1266
+msgid ""
+"The \"legendinline\" shortcode attribute is deprecated. Please use "
+"legendstyle=\"inline\" in your shortcode instead."
+msgstr ""
+"Shortcode-attributten \"legendinline\" er forældet. Brug i stedet "
+"legendstyle=\"inline\" i din shortcode."
+
+#: class-r34ics.php:1269
+msgid ""
+"The \"limitdayscustom\" setting is for internal use within the ICS Calendar "
+"plugin, and should not appear directly in your shortcode."
+msgstr ""
+"Indstillingen \"limitdayscustom\" er til intern brug i ICS Calendar plugin, "
+"og bør ikke vises direkte i din shortcode."
+
+#: class-r34ics.php:1508
 msgid "calendar event"
 msgstr "kalenderbegivenhed"
 
-#: functions.php:704
+#: functions.php:717
 msgid "Recurring event"
 msgstr "Tilbagevendende begivenhed"
 
-#: functions.php:709
+#: functions.php:722
 #, php-format
 msgid "Recurs every %s years"
 msgstr "Gentager sig hvert %s år"
 
-#: functions.php:709
+#: functions.php:722
 msgid "Recurs yearly"
 msgstr "Gentages årligt"
 
-#: functions.php:712
+#: functions.php:725
 #, php-format
 msgid "Recurs every %s months"
 msgstr "Gentages hver %s måned"
 
-#: functions.php:712
+#: functions.php:725
 msgid "Recurs monthly"
 msgstr "Gentages månedligt"
 
-#: functions.php:715
+#: functions.php:728
 #, php-format
 msgid "Recurs every %s weeks"
 msgstr "Gentager sig hver %s uger"
 
-#: functions.php:715
+#: functions.php:728
 msgid "Recurs weekly"
 msgstr "Gentager ugentligt"
 
-#: functions.php:718
+#: functions.php:731
 #, php-format
 msgid "Recurs every %s days"
 msgstr "Gentages hver %s dage"
 
-#: functions.php:718
+#: functions.php:731
 msgid "Recurs daily"
 msgstr "Gentages dagligt"
 
-#: functions.php:794
+#: functions.php:807
 #, php-format
 msgid ""
 "The \"url\" property in your %1$s shortcode appears to contain HTML tags; "
@@ -179,7 +195,7 @@ msgstr ""
 "kalender vises muligvis ikke korrekt som følge heraf. Fjern venligst det "
 "klikbare link i genvejskoden."
 
-#: functions.php:1015
+#: functions.php:1045
 msgid "The r34ics_url_get_contents() function is no longer supported."
 msgstr "Funktionen r34ics_url_get_contents() er ikke længere understøttet."
 
@@ -328,27 +344,6 @@ msgstr ""
 "mange yderligere tilpasningsmuligheder til rådighed. Se venligst "
 "%2$sBrugervejledning%3$s for detaljer."
 
-#: templates/admin/admin.php:37
-msgid "System Report"
-msgstr "Systemrapport"
-
-#: templates/admin/admin.php:41
-msgid ""
-"Please copy the following text and include it in your message when emailing "
-"support."
-msgstr ""
-"Kopier følgende tekst, og medtag den i din meddelelse, når du e-mailer "
-"support."
-
-#: templates/admin/admin.php:42
-#, php-format
-msgid ""
-"Also please include the %1$s shortcode exactly as you have it entered on the "
-"affected page."
-msgstr ""
-"Du bedes også inkludere %1$s shortcode præcis som du har indtastet den på "
-"den pågældende side."
-
 #: templates/admin/sidebar.php:5
 msgid ""
 "Our complete user guide is now available with full translation into dozens "
@@ -366,42 +361,10 @@ msgstr "Support"
 msgid ""
 "For support please email %1$s or use the %2$sWordPress Support Forums%3$s."
 msgstr ""
-"For support bedes du e-maile %1$s eller bruge %2$sWordPress Support Forums"
-"%3$s."
+"For support bedes du e-maile %1$s eller bruge %2$sWordPress Support "
+"Forums%3$s."
 
-#: templates/admin/sidebar.php:11
-msgid "Additional Resources"
-msgstr "Yderligere ressourcer"
-
-#: templates/admin/sidebar.php:13
-msgid "ICS documentation and tools:"
-msgstr "ICS dokumentation og værktøjer:"
-
-#: templates/admin/sidebar.php:17
-msgid "ICS Parser at GitHub"
-msgstr "ICS Parser hos GitHub"
-
-#: templates/admin/sidebar.php:18
-msgid "iCal Validator"
-msgstr "iCal-validator"
-
-#: templates/admin/sidebar.php:19
-msgid "Recurrence Rule Tester"
-msgstr "Test af gentagelsesregel"
-
-#: templates/admin/sidebar.php:23
-msgid "Miscellaneous reference and tools:"
-msgstr "Diverse referencer og værktøjer:"
-
-#: templates/admin/sidebar.php:27
-msgid "HTML Color Picker"
-msgstr "HTML-farvevælger"
-
-#: templates/admin/sidebar.php:28
-msgid "Unix Timestamp Converter"
-msgstr "Unix-tidsstempelkonverteringsprogram"
-
-#: templates/admin/sidebar.php:37
+#: templates/admin/sidebar.php:16
 #, php-format
 msgid ""
 "Features include additional views (month-with-sidebar, year-with-sidebar, "
@@ -418,11 +381,11 @@ msgstr ""
 "tilpasningsindstillinger for nemt at ændre kalenderens udseende, avancerede "
 "funktioner som regulære udtryk og meget mere! Besøg %s for at lære mere."
 
-#: templates/admin/sidebar.php:43
+#: templates/admin/sidebar.php:22
 msgid "Thank You!"
 msgstr "Mange tak!"
 
-#: templates/admin/sidebar.php:44
+#: templates/admin/sidebar.php:23
 #, php-format
 msgid ""
 "This plugin is free to use. If you find it to be of value, we welcome your "
@@ -434,11 +397,11 @@ msgstr ""
 "finansiere den fremtidige udvikling, eller få de avancerede funktioner i "
 "%1$sPRO version%2$s for kun US $ 29/year."
 
-#: templates/admin/sidebar.php:46
+#: templates/admin/sidebar.php:25
 msgid "Make a Donation"
 msgstr "Lav en donation"
 
-#: templates/admin/sidebar.php:46
+#: templates/admin/sidebar.php:25
 msgid "Go PRO!"
 msgstr "Skift til Pro!"
 
@@ -500,6 +463,27 @@ msgid ""
 msgstr ""
 "Der opstod en ukendt fejl under forsøg på at hente den ønskede URL-adresse."
 
+#: templates/admin/utilities.php:62
+msgid "System Report"
+msgstr "Systemrapport"
+
+#: templates/admin/utilities.php:66
+msgid ""
+"Please copy the following text and include it in your message when emailing "
+"support."
+msgstr ""
+"Kopier følgende tekst, og medtag den i din meddelelse, når du e-mailer "
+"support."
+
+#: templates/admin/utilities.php:67
+#, php-format
+msgid ""
+"Also please include the %1$s shortcode exactly as you have it entered on the "
+"affected page."
+msgstr ""
+"Du bedes også inkludere %1$s shortcode præcis som du har indtastet den på "
+"den pågældende side."
+
 #: templates/calendar-list.php:43
 msgid "No events found."
 msgstr "Ingen begivenheder blev fundet."
@@ -533,6 +517,10 @@ msgstr "Næste uge"
 msgid "ICS Calendar"
 msgstr "ICS Calendar"
 
+#. Plugin URI of the plugin/theme
+msgid "https://icscalendar.com"
+msgstr "https://icscalendar.com"
+
 #. Description of the plugin/theme
 msgid "Embed a live updating iCal (ICS) feed in any page using a shortcode."
 msgstr ""
@@ -544,8 +532,32 @@ msgid "Room 34 Creative Services, LLC"
 msgstr "Room 34 Creative Services, LLC"
 
 #. Author URI of the plugin/theme
-msgid "https://icscalendar.com"
-msgstr "https://icscalendar.com"
+msgid "https://room34.com"
+msgstr "https://room34.com"
+
+#~ msgid "Additional Resources"
+#~ msgstr "Yderligere ressourcer"
+
+#~ msgid "ICS documentation and tools:"
+#~ msgstr "ICS dokumentation og værktøjer:"
+
+#~ msgid "ICS Parser at GitHub"
+#~ msgstr "ICS Parser hos GitHub"
+
+#~ msgid "iCal Validator"
+#~ msgstr "iCal-validator"
+
+#~ msgid "Recurrence Rule Tester"
+#~ msgstr "Test af gentagelsesregel"
+
+#~ msgid "Miscellaneous reference and tools:"
+#~ msgstr "Diverse referencer og værktøjer:"
+
+#~ msgid "HTML Color Picker"
+#~ msgstr "HTML-farvevælger"
+
+#~ msgid "Unix Timestamp Converter"
+#~ msgstr "Unix-tidsstempelkonverteringsprogram"
 
 #~ msgid "Add ICS Calendar"
 #~ msgstr "Tilføj ICS-kalender"

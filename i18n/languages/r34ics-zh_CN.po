@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ICS Calendar\n"
-"POT-Creation-Date: 2022-11-07 12:39-0600\n"
-"PO-Revision-Date: 2022-11-07 12:40-0600\n"
+"POT-Creation-Date: 2022-12-23 11:26-0600\n"
+"PO-Revision-Date: 2022-12-23 11:26-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.2\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: ics-calendar.php\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: class-r34ics.php:194
+#: class-r34ics.php:195
 #, php-format
 msgid ""
 "The %1$s plugin requires either the PHP cURL extensions, or the %2$s PHP "
@@ -31,7 +31,7 @@ msgstr ""
 "%1$s 插件需要打开PHP cURL扩展，或者打开%2$sPHP设置。请更新你的%3$s文件中的设"
 "置，或联系你的主机提供商寻求帮助。"
 
-#: class-r34ics.php:203
+#: class-r34ics.php:204
 #, php-format
 msgid ""
 "%1$sYour site is currently using a UTC offset-based timezone setting.%2$s "
@@ -46,29 +46,29 @@ msgstr ""
 "市，在同一个时区，以获得正确的时间显示。请参阅我们的%6$s文件%7$s，了解有关这"
 "个问题的其他信息。"
 
-#: class-r34ics.php:221
+#: class-r34ics.php:222
 #, php-format
 msgid "Cleared %1$s %2$s transient(s)."
 msgstr "清除了%1$s%2$s个瞬态。"
 
-#: class-r34ics.php:228
+#: class-r34ics.php:229
 #, php-format
 msgid "No %1$s transients were found."
 msgstr "没有发现%1$s的瞬态。"
 
-#: class-r34ics.php:250 templates/admin/sidebar.php:3
+#: class-r34ics.php:251 templates/admin/sidebar.php:3
 msgid "User Guide"
 msgstr "用户指南"
 
-#: class-r34ics.php:252 templates/admin/sidebar.php:36
+#: class-r34ics.php:253 templates/admin/sidebar.php:15
 msgid "Upgrade to PRO!"
 msgstr "升级到PRO！"
 
-#: class-r34ics.php:270
+#: class-r34ics.php:271
 msgid "Show/hide all"
 msgstr "显示/隐藏所有"
 
-#: class-r34ics.php:533
+#: class-r34ics.php:539
 msgid ""
 "ICS file could not be retrieved or was empty. Please verify URL is correct, "
 "and check your php.ini configuration to verify either cURL or "
@@ -80,86 +80,102 @@ msgstr ""
 "cURL 或allow_url_fopen是否可用。如果使用空格来分隔多个 URL，您可能还希望尝试"
 "使用管道字符。受影响的 URL:"
 
-#: class-r34ics.php:700
+#: class-r34ics.php:706
 msgid "Ends"
 msgstr "结束图"
 
-#: class-r34ics.php:872
+#: class-r34ics.php:879
 msgid "Hide past events"
 msgstr "隐藏过去的活动"
 
-#: class-r34ics.php:873 templates/calendar-month.php:83
+#: class-r34ics.php:880 templates/calendar-month.php:83
 #: templates/calendar-week.php:80
 msgid "Show past events"
 msgstr "显示过去的事件"
 
-#: class-r34ics.php:955
+#: class-r34ics.php:960
 msgid "Click for more..."
 msgstr "点击查看更多..."
 
-#: class-r34ics.php:988
+#: class-r34ics.php:993
 msgid "Save to your calendar"
 msgstr "保存到你的日历"
 
-#: class-r34ics.php:988
+#: class-r34ics.php:993
 msgid "Download"
 msgstr "下载"
 
-#: class-r34ics.php:1064
+#: class-r34ics.php:1069
 msgid "Cancelled"
 msgstr "已取消"
 
-#: class-r34ics.php:1258
+#: class-r34ics.php:1263
 msgid ""
-"The \"currentweek\" shortcode attribute is deprecated. Please use view=\"week"
-"\" in your shortcode instead."
+"The \"currentweek\" shortcode attribute is deprecated. Please use "
+"view=\"week\" in your shortcode instead."
 msgstr "\"currentweek\"短代码属性已弃用。请在短代码中使用 view=\"week\"。"
 
-#: class-r34ics.php:1429
+#: class-r34ics.php:1266
+msgid ""
+"The \"legendinline\" shortcode attribute is deprecated. Please use "
+"legendstyle=\"inline\" in your shortcode instead."
+msgstr ""
+"legendinline \"的短码属性已被废弃。请在您的短码中使用 legendstyle=\"inline "
+"\"代替。"
+
+#: class-r34ics.php:1269
+msgid ""
+"The \"limitdayscustom\" setting is for internal use within the ICS Calendar "
+"plugin, and should not appear directly in your shortcode."
+msgstr ""
+"limitdayscustom \"的设置是供ICS日历插件内部使用的，不应该直接出现在您的短代码"
+"中。"
+
+#: class-r34ics.php:1508
 msgid "calendar event"
 msgstr "日历事件"
 
-#: functions.php:704
+#: functions.php:717
 msgid "Recurring event"
 msgstr "定期事件"
 
-#: functions.php:709
+#: functions.php:722
 #, php-format
 msgid "Recurs every %s years"
 msgstr "每%s年重复一次"
 
-#: functions.php:709
+#: functions.php:722
 msgid "Recurs yearly"
 msgstr "每年递归"
 
-#: functions.php:712
+#: functions.php:725
 #, php-format
 msgid "Recurs every %s months"
 msgstr "每%s个月重复一次"
 
-#: functions.php:712
+#: functions.php:725
 msgid "Recurs monthly"
 msgstr "每月递归"
 
-#: functions.php:715
+#: functions.php:728
 #, php-format
 msgid "Recurs every %s weeks"
 msgstr "每%s周重复一次"
 
-#: functions.php:715
+#: functions.php:728
 msgid "Recurs weekly"
 msgstr "每周重复"
 
-#: functions.php:718
+#: functions.php:731
 #, php-format
 msgid "Recurs every %s days"
 msgstr "每%s天重复一次"
 
-#: functions.php:718
+#: functions.php:731
 msgid "Recurs daily"
 msgstr "每天重复"
 
-#: functions.php:794
+#: functions.php:807
 #, php-format
 msgid ""
 "The \"url\" property in your %1$s shortcode appears to contain HTML tags; "
@@ -170,7 +186,7 @@ msgstr ""
 "您的%1$s短代码中的 \"url \"属性似乎包含HTML标签；很可能您的URL已经变成了一个"
 "可点击的链接。您的日历可能因此而不能正常显示。请删除短代码中的可点击链接。"
 
-#: functions.php:1015
+#: functions.php:1045
 msgid "The r34ics_url_get_contents() function is no longer supported."
 msgstr "r34ics_url_get_contents()函数已不再被支持。"
 
@@ -307,23 +323,6 @@ msgstr ""
 "要在一个页面中插入一个%1$s，请使用下面的短码格式，用你的饲料URL替换所有大写字"
 "母文本。许多额外的定制选项是可用的。请参阅%2$s用户指南%3$s了解详情。"
 
-#: templates/admin/admin.php:37
-msgid "System Report"
-msgstr "系统报告"
-
-#: templates/admin/admin.php:41
-msgid ""
-"Please copy the following text and include it in your message when emailing "
-"support."
-msgstr "请在发送电子邮件支持时复制以下文本并将其包含在邮件中。"
-
-#: templates/admin/admin.php:42
-#, php-format
-msgid ""
-"Also please include the %1$s shortcode exactly as you have it entered on the "
-"affected page."
-msgstr "也请包括%1$s短码，与你在受影响的页面上输入的短码完全一致。"
-
 #: templates/admin/sidebar.php:5
 msgid ""
 "Our complete user guide is now available with full translation into dozens "
@@ -340,39 +339,7 @@ msgid ""
 "For support please email %1$s or use the %2$sWordPress Support Forums%3$s."
 msgstr "如需支持，请发送电子邮件%1$s或使用%2$sWordPress支持论坛%3$s。"
 
-#: templates/admin/sidebar.php:11
-msgid "Additional Resources"
-msgstr "更多资源"
-
-#: templates/admin/sidebar.php:13
-msgid "ICS documentation and tools:"
-msgstr "ICS 文档和工具："
-
-#: templates/admin/sidebar.php:17
-msgid "ICS Parser at GitHub"
-msgstr "吉图布的 ICS 帕瑟"
-
-#: templates/admin/sidebar.php:18
-msgid "iCal Validator"
-msgstr "i 卡尔验证器"
-
-#: templates/admin/sidebar.php:19
-msgid "Recurrence Rule Tester"
-msgstr "重复规则测试器"
-
-#: templates/admin/sidebar.php:23
-msgid "Miscellaneous reference and tools:"
-msgstr "杂项参考和工具："
-
-#: templates/admin/sidebar.php:27
-msgid "HTML Color Picker"
-msgstr "HTML 颜色拾取器"
-
-#: templates/admin/sidebar.php:28
-msgid "Unix Timestamp Converter"
-msgstr "尤尼克斯时间戳转换器"
-
-#: templates/admin/sidebar.php:37
+#: templates/admin/sidebar.php:16
 #, php-format
 msgid ""
 "Features include additional views (month-with-sidebar, year-with-sidebar, "
@@ -387,11 +354,11 @@ msgstr ""
 "置、轻松修改日历外观的自定义器选项、常规表达式等高级功能等！访问%s了解更多信"
 "息。"
 
-#: templates/admin/sidebar.php:43
+#: templates/admin/sidebar.php:22
 msgid "Thank You!"
 msgstr "谢谢！"
 
-#: templates/admin/sidebar.php:44
+#: templates/admin/sidebar.php:23
 #, php-format
 msgid ""
 "This plugin is free to use. If you find it to be of value, we welcome your "
@@ -401,11 +368,11 @@ msgstr ""
 "此插件是免费使用的。如果您发现它有价值，我们欢迎您的捐款（建议金额：9美元），"
 "以帮助资助未来的发展，或获得%1$sPRO版本%2$s的高级功能，只需29美元/年。"
 
-#: templates/admin/sidebar.php:46
+#: templates/admin/sidebar.php:25
 msgid "Make a Donation"
 msgstr "捐款"
 
-#: templates/admin/sidebar.php:46
+#: templates/admin/sidebar.php:25
 msgid "Go PRO!"
 msgstr "去专业！"
 
@@ -465,6 +432,23 @@ msgid ""
 "An unknown error occurred while attempting to retrieve the requested URL."
 msgstr "在尝试检索请求的 URL 时发生了未知错误。"
 
+#: templates/admin/utilities.php:62
+msgid "System Report"
+msgstr "系统报告"
+
+#: templates/admin/utilities.php:66
+msgid ""
+"Please copy the following text and include it in your message when emailing "
+"support."
+msgstr "请在发送电子邮件支持时复制以下文本并将其包含在邮件中。"
+
+#: templates/admin/utilities.php:67
+#, php-format
+msgid ""
+"Also please include the %1$s shortcode exactly as you have it entered on the "
+"affected page."
+msgstr "也请包括%1$s短码，与你在受影响的页面上输入的短码完全一致。"
+
 #: templates/calendar-list.php:43
 msgid "No events found."
 msgstr "没有发现事件。"
@@ -498,6 +482,10 @@ msgstr "下个星期"
 msgid "ICS Calendar"
 msgstr "ICS Calendar"
 
+#. Plugin URI of the plugin/theme
+msgid "https://icscalendar.com"
+msgstr "https://icscalendar.com"
+
 #. Description of the plugin/theme
 msgid "Embed a live updating iCal (ICS) feed in any page using a shortcode."
 msgstr "使用短代码在任何页面中嵌入实时更新iCal（ICS）源。"
@@ -507,8 +495,32 @@ msgid "Room 34 Creative Services, LLC"
 msgstr "Room 34 Creative Services, LLC"
 
 #. Author URI of the plugin/theme
-msgid "https://icscalendar.com"
-msgstr "https://icscalendar.com"
+msgid "https://room34.com"
+msgstr "https://room34.com"
+
+#~ msgid "Additional Resources"
+#~ msgstr "更多资源"
+
+#~ msgid "ICS documentation and tools:"
+#~ msgstr "ICS 文档和工具："
+
+#~ msgid "ICS Parser at GitHub"
+#~ msgstr "吉图布的 ICS 帕瑟"
+
+#~ msgid "iCal Validator"
+#~ msgstr "i 卡尔验证器"
+
+#~ msgid "Recurrence Rule Tester"
+#~ msgstr "重复规则测试器"
+
+#~ msgid "Miscellaneous reference and tools:"
+#~ msgstr "杂项参考和工具："
+
+#~ msgid "HTML Color Picker"
+#~ msgstr "HTML 颜色拾取器"
+
+#~ msgid "Unix Timestamp Converter"
+#~ msgstr "尤尼克斯时间戳转换器"
 
 #~ msgid "Add ICS Calendar"
 #~ msgstr "添加 ics 日历"
@@ -560,5 +572,5 @@ msgstr "https://icscalendar.com"
 #~ "details."
 #~ msgstr ""
 #~ "在 ICS 源中找不到任何事件。这可能意味着您的日历不包含任何事件，您的源 URL "
-#~ "可能不正确，或者您的短代码可能有其他配置错误。在短代码中设置调 debug="
-#~ "\"true\" 以了解其他详细信息。"
+#~ "可能不正确，或者您的短代码可能有其他配置错误。在短代码中设置调 "
+#~ "debug=\"true\" 以了解其他详细信息。"

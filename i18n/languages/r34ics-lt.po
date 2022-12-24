@@ -1,17 +1,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ICS Calendar\n"
-"POT-Creation-Date: 2022-11-07 12:30-0600\n"
-"PO-Revision-Date: 2022-11-07 12:30-0600\n"
+"POT-Creation-Date: 2022-12-23 11:24-0600\n"
+"PO-Revision-Date: 2022-12-23 11:24-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: lt_LT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && (n%100<11 || n%100>19) ? 0 : n"
-"%10>=2 && n%10<=9 && (n%100<11 || n%100>19) ? 1 : 2);\n"
-"X-Generator: Poedit 3.2\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && (n%100<11 || n%100>19) ? 0 : "
+"n%10>=2 && n%10<=9 && (n%100<11 || n%100>19) ? 1 : 2);\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: ics-calendar.php\n"
@@ -22,7 +22,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: class-r34ics.php:194
+#: class-r34ics.php:195
 #, php-format
 msgid ""
 "The %1$s plugin requires either the PHP cURL extensions, or the %2$s PHP "
@@ -33,7 +33,7 @@ msgstr ""
 "nustatymą. Atnaujinkite %3$s failo nustatymus arba kreipkitės pagalbos į "
 "prieglobos paslaugų teikėją."
 
-#: class-r34ics.php:203
+#: class-r34ics.php:204
 #, php-format
 msgid ""
 "%1$sYour site is currently using a UTC offset-based timezone setting.%2$s "
@@ -50,29 +50,29 @@ msgstr ""
 "miestą toje pačioje laiko juostoje. Daugiau informacijos apie šią problemą "
 "rasite %6$sdokumentuose%7$s."
 
-#: class-r34ics.php:221
+#: class-r34ics.php:222
 #, php-format
 msgid "Cleared %1$s %2$s transient(s)."
 msgstr "Išvalytas (-os) %1$s %2$s pereinamasis (-iai) reiškinys (-iai)."
 
-#: class-r34ics.php:228
+#: class-r34ics.php:229
 #, php-format
 msgid "No %1$s transients were found."
 msgstr "Nebuvo rasta jokių %1$s pereinamųjų procesų."
 
-#: class-r34ics.php:250 templates/admin/sidebar.php:3
+#: class-r34ics.php:251 templates/admin/sidebar.php:3
 msgid "User Guide"
 msgstr "Naudotojo žinynas"
 
-#: class-r34ics.php:252 templates/admin/sidebar.php:36
+#: class-r34ics.php:253 templates/admin/sidebar.php:15
 msgid "Upgrade to PRO!"
 msgstr "Atnaujinkite į PRO!"
 
-#: class-r34ics.php:270
+#: class-r34ics.php:271
 msgid "Show/hide all"
 msgstr "Rodyti / slėpti viską"
 
-#: class-r34ics.php:533
+#: class-r34ics.php:539
 msgid ""
 "ICS file could not be retrieved or was empty. Please verify URL is correct, "
 "and check your php.ini configuration to verify either cURL or "
@@ -86,88 +86,104 @@ msgstr ""
 "keliems URL atskirti, taip pat galite pabandyti naudoti vamzdžio simbolį. "
 "Paveiktas URL:"
 
-#: class-r34ics.php:700
+#: class-r34ics.php:706
 msgid "Ends"
 msgstr "Baigiasi"
 
-#: class-r34ics.php:872
+#: class-r34ics.php:879
 msgid "Hide past events"
 msgstr "Slėpti ankstesnius įvykius"
 
-#: class-r34ics.php:873 templates/calendar-month.php:83
+#: class-r34ics.php:880 templates/calendar-month.php:83
 #: templates/calendar-week.php:80
 msgid "Show past events"
 msgstr "Rodyti ankstesnius įvykius"
 
-#: class-r34ics.php:955
+#: class-r34ics.php:960
 msgid "Click for more..."
 msgstr "Spustelėkite, jei norite gauti daugiau..."
 
-#: class-r34ics.php:988
+#: class-r34ics.php:993
 msgid "Save to your calendar"
 msgstr "Įrašyti į kalendorių"
 
-#: class-r34ics.php:988
+#: class-r34ics.php:993
 msgid "Download"
 msgstr "Atsisiųsti"
 
-#: class-r34ics.php:1064
+#: class-r34ics.php:1069
 msgid "Cancelled"
 msgstr "Atšaukta"
 
-#: class-r34ics.php:1258
+#: class-r34ics.php:1263
 msgid ""
-"The \"currentweek\" shortcode attribute is deprecated. Please use view=\"week"
-"\" in your shortcode instead."
+"The \"currentweek\" shortcode attribute is deprecated. Please use "
+"view=\"week\" in your shortcode instead."
 msgstr ""
 "\"Currentweek\" trumpojo kodo atributas yra pasenęs. Vietoj to trumpajame "
 "kode naudokite view=\"week\"."
 
-#: class-r34ics.php:1429
+#: class-r34ics.php:1266
+msgid ""
+"The \"legendinline\" shortcode attribute is deprecated. Please use "
+"legendstyle=\"inline\" in your shortcode instead."
+msgstr ""
+"Trumpojo kodo atributas \"legendinline\" nebenaudojamas. Vietoj jo "
+"trumpajame kode naudokite legendstyle=\"inline\"."
+
+#: class-r34ics.php:1269
+msgid ""
+"The \"limitdayscustom\" setting is for internal use within the ICS Calendar "
+"plugin, and should not appear directly in your shortcode."
+msgstr ""
+"Nustatymas \"limitdayscustom\" skirtas vidiniam ICS kalendoriaus įskiepio "
+"naudojimui ir neturėtų būti tiesiogiai rodomas jūsų trumpajame kode."
+
+#: class-r34ics.php:1508
 msgid "calendar event"
 msgstr "kalendoriaus įvykis"
 
-#: functions.php:704
+#: functions.php:717
 msgid "Recurring event"
 msgstr "Pasikartojantis įvykis"
 
-#: functions.php:709
+#: functions.php:722
 #, php-format
 msgid "Recurs every %s years"
 msgstr "Kartojasi kas %s metus"
 
-#: functions.php:709
+#: functions.php:722
 msgid "Recurs yearly"
 msgstr "Kartojasi kasmet"
 
-#: functions.php:712
+#: functions.php:725
 #, php-format
 msgid "Recurs every %s months"
 msgstr "Kartojasi kas %s mėnesius"
 
-#: functions.php:712
+#: functions.php:725
 msgid "Recurs monthly"
 msgstr "Kartojasi kas mėnesį"
 
-#: functions.php:715
+#: functions.php:728
 #, php-format
 msgid "Recurs every %s weeks"
 msgstr "Kartojasi kas %s savaites"
 
-#: functions.php:715
+#: functions.php:728
 msgid "Recurs weekly"
 msgstr "Kartojasi kas savaitę"
 
-#: functions.php:718
+#: functions.php:731
 #, php-format
 msgid "Recurs every %s days"
 msgstr "Kartojasi kas %s dienas"
 
-#: functions.php:718
+#: functions.php:731
 msgid "Recurs daily"
 msgstr "Kartojasi kasdien"
 
-#: functions.php:794
+#: functions.php:807
 #, php-format
 msgid ""
 "The \"url\" property in your %1$s shortcode appears to contain HTML tags; "
@@ -180,7 +196,7 @@ msgstr ""
 "spustelėti. Dėl to jūsų kalendorius gali būti rodomas netinkamai. "
 "Pašalinkite trumpojo kodo paspaudžiamą nuorodą."
 
-#: functions.php:1015
+#: functions.php:1045
 msgid "The r34ics_url_get_contents() function is no longer supported."
 msgstr "Funkcija r34ics_url_get_contents() nebepalaikoma."
 
@@ -330,27 +346,6 @@ msgstr ""
 "papildomų pritaikymo parinkčių. Išsamesnės informacijos ieškokite "
 "%2$sVartotojo vadove %3$s."
 
-#: templates/admin/admin.php:37
-msgid "System Report"
-msgstr "Sistemos ataskaita"
-
-#: templates/admin/admin.php:41
-msgid ""
-"Please copy the following text and include it in your message when emailing "
-"support."
-msgstr ""
-"Nukopijuokite šį tekstą ir įtraukite jį į savo pranešimą, kai siunčiate "
-"palaikymą el. paštu."
-
-#: templates/admin/admin.php:42
-#, php-format
-msgid ""
-"Also please include the %1$s shortcode exactly as you have it entered on the "
-"affected page."
-msgstr ""
-"Taip pat prašome įtraukti %1$s trumpąjį kodą tiksliai taip, kaip jį įvedėte "
-"paveiktame puslapyje."
-
 #: templates/admin/sidebar.php:5
 msgid ""
 "Our complete user guide is now available with full translation into dozens "
@@ -371,39 +366,7 @@ msgstr ""
 "Norėdami gauti palaikymą, rašykite %1$s arba naudokite %2$sWordPress\" "
 "palaikymo forumus%3$s."
 
-#: templates/admin/sidebar.php:11
-msgid "Additional Resources"
-msgstr "Papildomi ištekliai"
-
-#: templates/admin/sidebar.php:13
-msgid "ICS documentation and tools:"
-msgstr "ICS dokumentacija ir įrankiai:"
-
-#: templates/admin/sidebar.php:17
-msgid "ICS Parser at GitHub"
-msgstr "ICS analizatorius \"GitHub\""
-
-#: templates/admin/sidebar.php:18
-msgid "iCal Validator"
-msgstr "iCal validatorius"
-
-#: templates/admin/sidebar.php:19
-msgid "Recurrence Rule Tester"
-msgstr "Pasikartojimo taisyklės testeris"
-
-#: templates/admin/sidebar.php:23
-msgid "Miscellaneous reference and tools:"
-msgstr "Įvairios nuorodos ir įrankiai:"
-
-#: templates/admin/sidebar.php:27
-msgid "HTML Color Picker"
-msgstr "HTML spalvų parinkiklis"
-
-#: templates/admin/sidebar.php:28
-msgid "Unix Timestamp Converter"
-msgstr "Unix laiko žymos keitiklis"
-
-#: templates/admin/sidebar.php:37
+#: templates/admin/sidebar.php:16
 #, php-format
 msgid ""
 "Features include additional views (month-with-sidebar, year-with-sidebar, "
@@ -421,11 +384,11 @@ msgstr ""
 "išvaizdą, pažangias funkcijas, pvz., įprastas išraiškas, ir dar daugiau! "
 "Aplankykite %s sužinoti daugiau."
 
-#: templates/admin/sidebar.php:43
+#: templates/admin/sidebar.php:22
 msgid "Thank You!"
 msgstr "Ačiū!"
 
-#: templates/admin/sidebar.php:44
+#: templates/admin/sidebar.php:23
 #, php-format
 msgid ""
 "This plugin is free to use. If you find it to be of value, we welcome your "
@@ -437,11 +400,11 @@ msgstr ""
 "finansuoti būsimą plėtrą arba gauti pažangias %1$sPRO versijos funkcijas%2$s "
 "tik už 29 JAV dolerius per metus."
 
-#: templates/admin/sidebar.php:46
+#: templates/admin/sidebar.php:25
 msgid "Make a Donation"
 msgstr "Padarykite donorystę"
 
-#: templates/admin/sidebar.php:46
+#: templates/admin/sidebar.php:25
 msgid "Go PRO!"
 msgstr "Eiti PRO!"
 
@@ -504,6 +467,27 @@ msgid ""
 "An unknown error occurred while attempting to retrieve the requested URL."
 msgstr "Bandant nuskaityti pareikalautą URL įvyko nežinoma klaida."
 
+#: templates/admin/utilities.php:62
+msgid "System Report"
+msgstr "Sistemos ataskaita"
+
+#: templates/admin/utilities.php:66
+msgid ""
+"Please copy the following text and include it in your message when emailing "
+"support."
+msgstr ""
+"Nukopijuokite šį tekstą ir įtraukite jį į savo pranešimą, kai siunčiate "
+"palaikymą el. paštu."
+
+#: templates/admin/utilities.php:67
+#, php-format
+msgid ""
+"Also please include the %1$s shortcode exactly as you have it entered on the "
+"affected page."
+msgstr ""
+"Taip pat prašome įtraukti %1$s trumpąjį kodą tiksliai taip, kaip jį įvedėte "
+"paveiktame puslapyje."
+
 #: templates/calendar-list.php:43
 msgid "No events found."
 msgstr "Įvykių nerasta."
@@ -537,6 +521,10 @@ msgstr "Kita savaitę"
 msgid "ICS Calendar"
 msgstr "ICS Calendar"
 
+#. Plugin URI of the plugin/theme
+msgid "https://icscalendar.com"
+msgstr "https://icscalendar.com"
+
 #. Description of the plugin/theme
 msgid "Embed a live updating iCal (ICS) feed in any page using a shortcode."
 msgstr ""
@@ -548,8 +536,32 @@ msgid "Room 34 Creative Services, LLC"
 msgstr "Room 34 Creative Services, LLC"
 
 #. Author URI of the plugin/theme
-msgid "https://icscalendar.com"
-msgstr "https://icscalendar.com"
+msgid "https://room34.com"
+msgstr "https://room34.com"
+
+#~ msgid "Additional Resources"
+#~ msgstr "Papildomi ištekliai"
+
+#~ msgid "ICS documentation and tools:"
+#~ msgstr "ICS dokumentacija ir įrankiai:"
+
+#~ msgid "ICS Parser at GitHub"
+#~ msgstr "ICS analizatorius \"GitHub\""
+
+#~ msgid "iCal Validator"
+#~ msgstr "iCal validatorius"
+
+#~ msgid "Recurrence Rule Tester"
+#~ msgstr "Pasikartojimo taisyklės testeris"
+
+#~ msgid "Miscellaneous reference and tools:"
+#~ msgstr "Įvairios nuorodos ir įrankiai:"
+
+#~ msgid "HTML Color Picker"
+#~ msgstr "HTML spalvų parinkiklis"
+
+#~ msgid "Unix Timestamp Converter"
+#~ msgstr "Unix laiko žymos keitiklis"
 
 #~ msgid "Add ICS Calendar"
 #~ msgstr "Įtraukti ICS kalendorių"
@@ -580,5 +592,5 @@ msgstr "https://icscalendar.com"
 #~ "See the %1$sPHP documentation%2$s for additional information on this "
 #~ "issue."
 #~ msgstr ""
-#~ "Papildomos informacijos šiuo klausimu ieškokite %1$sPHP dokumentacijoje"
-#~ "%2$s."
+#~ "Papildomos informacijos šiuo klausimu ieškokite %1$sPHP "
+#~ "dokumentacijoje%2$s."

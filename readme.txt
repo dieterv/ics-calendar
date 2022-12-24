@@ -5,7 +5,7 @@ Tags: calendar, iCal, ICS, iCalendar, Google Calendar, Outlook, Office 365, Mac 
 Requires at least: 4.9
 Tested up to: 6.1.1
 Requires PHP: 7.0.0
-Stable tag: 10.3.0
+Stable tag: 10.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -94,6 +94,13 @@ The paid [ICS Calendar Pro](https://icscalendar.com) add-on includes additional 
 == Screenshots ==
 
 == Changelog ==
+
+= 10.3.1 - 2022.12.23 =
+
+* Minor code tweak to conditional for rendering AJAX placeholder in `R34ICS::shortcode()` method to allow support for this feature in the Pro version.
+* Added AJAX loading animation.
+* Added shortcode attribute deprecation notices in `R34ICS::shortcode()` (and changed `E_USER_NOTICE` to `E_USER_DEPRECATED`).
+* i18n: Added translations for new text strings.
 
 = 10.3.0 - 2022.12.22 =
 
