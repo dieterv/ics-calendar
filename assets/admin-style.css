@@ -36,7 +36,7 @@ https://icscalendar.com
 	border-radius: 0;
 	color: #191919;
 	font-family: monospace;
-	height: 36em;
+	height: clamp(5rem, 25vh, 15rem);
 	margin: 1em 0;
 	overflow: auto;
 	padding: 0.5em;

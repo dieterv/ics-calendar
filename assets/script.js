@@ -155,7 +155,12 @@ function r34ics_init() {
 			var r34ics_cal = jQuery(this).closest('.ics-calendar');
 			r34ics_cal.addClass('show-past-events');
 			r34ics_cal.find('.ics-calendar-month-grid tbody tr').css('display','none');
-			r34ics_cal.find('.ics-calendar-month-grid tbody tr.' + jQuery(this).val()).css('display','table-row');
+			if (r34ics_is_phone()) {
+				r34ics_cal.find('.ics-calendar-month-grid tbody tr.' + jQuery(this).val()).css('display','block');
+			}
+			else {
+				r34ics_cal.find('.ics-calendar-month-grid tbody tr.' + jQuery(this).val()).css('display','table-row');
+			}
 		});
 		// Show/hide past events on mobile
 		jQuery('a[data-ics-calendar-action="show-past-events"]').on('click', function() {
@@ -179,7 +184,12 @@ function r34ics_init() {
 		jQuery('.ics-calendar.layout-week .ics-calendar-month-grid:not(.fixed_dates) tbody td.today').parent().prev().addClass('previous-week').removeClass('remove');
 		jQuery('.ics-calendar.layout-week .ics-calendar-month-grid:not(.fixed_dates) tbody td.today').parent().next().addClass('next-week').removeClass('remove');
 		jQuery('.ics-calendar.layout-week .ics-calendar-month-grid:not(.fixed_dates) tbody tr.remove').remove();
-		jQuery('.ics-calendar.layout-week .ics-calendar-month-grid tbody tr.current-week').css('display','table-row');
+		if (r34ics_is_phone()) {
+			jQuery('.ics-calendar.layout-week .ics-calendar-month-grid tbody tr.current-week').css('display','block');
+		}
+		else {
+			jQuery('.ics-calendar.layout-week .ics-calendar-month-grid tbody tr.current-week').css('display','table-row');
+		}
 		jQuery('.ics-calendar.layout-week .ics-calendar-select').show();
 		jQuery('.ics-calendar.layout-week .ics-calendar-week-wrapper:first-of-type').show();
 		// Remove Show Past Events link if there *are* no past events

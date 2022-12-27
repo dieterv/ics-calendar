@@ -6,7 +6,7 @@ if (!defined('ABSPATH')) { exit; }
 class R34ICS {
 
 	const NAME = 'ICS Calendar';
-	const VERSION = '10.3.1';
+	const VERSION = '10.4.0';
 	
 	public $version = R34ICS::VERSION; // Retained for backwards compatibility
 
@@ -261,7 +261,7 @@ class R34ICS {
 		ob_start();
 		if (count((array)$ics_data['feed_titles']) > 1) {
 			?>
-			<div class="ics-calendar-color-key<?php if (!empty($args['legendstyle']) && $args['legendstyle'] == 'inline') { echo ' inline'; } ?>">
+			<div class="ics-calendar-color-key<?php if (empty($args['legendstyle']) || $args['legendstyle'] == 'inline') { echo ' inline'; } ?>">
 				<?php
 				if (empty($no_toggles) && count($ics_data['feed_titles']) > 4) {
 					$toggle_all_uid = r34ics_uid();
@@ -389,52 +389,12 @@ class R34ICS {
 		// No transient ICS data; retrieve ICS file from server
 		if (empty($ics_data)) {
 			$loaded_from_transient = false;
-			$ics_data = array();
-	
-			// Convert URL into array and iterate
-			$ics_data['events'] = array();
-			$ics_data['urls'] = r34ics_space_pipe_explode($url);
-			$ics_data['tz'] = !empty($tz) ? r34ics_space_pipe_explode($tz) : get_option('timezone_string');
 			
-			// Set general calendar information
-			$ics_data['view'] = $view;
-			$ics_data['guid'] = !empty($guid) ? $guid : r34ics_uid();
-			$ics_data['title'] = isset($title)
-				? (!r34ics_boolean_check($title) ? null : $title)
-				: null;
-			$ics_data['description'] = isset($description)
-				? (!r34ics_boolean_check($description) ? null : $description)
-				: null;
-
-			// Set colors and feed titles for color key
-			$ics_data['colors'] = apply_filters('r34ics_display_calendar_color_set', (!empty($color) ? r34ics_color_set(r34ics_space_pipe_explode($color), 1, (empty($args['whitetext']) && empty($args['solidcolors']))) : null), $args);
-			$ics_data['tablebg'] = $tablebg;
-			$ics_data['feed_titles'] = !empty($feedlabel) ? explode('|', $feedlabel) : array();
-			
-			// Determine date range for parser (these can be rough -- it's just to limit excessive unnecessary parsing)
-			$range_unit = 60;
-			if (strpos($view, 'week') !== false) { $range_unit = 15; }
-			if ((!empty($startdate) && intval($startdate) > 20000000)) {
-				$range_start = r34ics_date('Y/m/d', $startdate, null, '-' . intval($range_unit) . ' days');
-				$range_end = r34ics_date('Y/m/d', $startdate, null, '+' . intval($limitdays + $range_unit) . ' days');
-			}
-			else {
-				if (!empty($pastdays)) {
-					$range_start = r34ics_date('Y/m/d', null, null, '-' . intval($pastdays + $range_unit) . ' days');
-				}
-				else {
-					$range_start = r34ics_date('Y/m/d', null, null, '-' . intval(wp_date('j') + $range_unit) . ' days');
-				}
-				$range_end = r34ics_date('Y/m/d', null, null, '+' . intval($limitdays + $range_unit) . ' days');
-			}
-			// Additional filtering of range dates
-			$range_start = apply_filters('r34ics_display_calendar_range_start', $range_start, $args);
-			$range_end = apply_filters('r34ics_display_calendar_range_end', $range_end, $args);
-			
-			// Get day counts for ICS Parser's range filters
-			$now_dtm = new DateTime();
-			$filter_days_after = $now_dtm->diff(new DateTime($range_end))->format('%a');
-			$filter_days_before = $now_dtm->diff(new DateTime($range_start))->format('%a');
+			// Set basic info parameters
+			$ics_data = $this->display_calendar_ics_data_init($args);
+				
+			// Determine rough date range for parser
+			$range = $this->display_calendar_date_range($args);
 			
 			// Default values for display date range
 			$first_date = r34ics_date('Ymd');
@@ -526,60 +486,42 @@ class R34ICS {
 			}
 		
 			// Process each individual feed URL
+			$single_feed = (count((array)$ics_data['urls']) == 1);
 			foreach ((array)$ics_data['urls'] as $feed_key => $url) {
 			
 				// Get timezone for this feed
 				$url_tz = r34ics_get_feed_tz($ics_data, $feed_key);
 		
-				// Get ICS file contents
-				$ics_contents = $this->_url_get_contents($url, $method, false, $curlopts, empty($reload), $basicauth, !empty($skipdomainerrors));
-		
+				// Parse feed URL
+				$ICal = $this->ical_parse_url($url, $url_tz->getName(), $args, $range);
+
 				// No ICS data present -- throw error and move on to the next feed
-				if (empty($ics_contents)) {
+				if (!is_object($ICal)) {
 					trigger_error(__('ICS file could not be retrieved or was empty. Please verify URL is correct, and check your php.ini configuration to verify either cURL or allow_url_fopen is available. If you are using spaces to delimit multiple URLs, you may also wish to try using the pipe character instead. Affected URL:', 'r34ics') . ' ' . $url, E_USER_NOTICE);
 					continue;
 				}
-								
-				// Fix issue with hard line breaks inside DESCRIPTION fields (not included in the documentation because problem needs further research)
-				if (!empty($linebreakfix)) {
-					$ics_contents = r34ics_line_break_fix($ics_contents);
-				}
 				
-				// Filter to allow external pre-processing of raw feed contents before parsing
-				$ics_contents = apply_filters('r34ics_display_calendar_preprocess_raw_feed', $ics_contents, $range_start, $range_end, $args);
-
-				// Parse ICS contents
-				if (!$this->parser_loaded) {
-					$this->parser_loaded = $this->_load_parser(!empty($legacyparser));
-				}
-				$ICal = new R34ICS_ICal\ICal('ICal.ics', array(
-					'defaultSpan'					=> !empty($limit_days) ? intval(ceil($limit_days / 365)) : 1,
-					'defaultTimeZone'				=> $url_tz->getName(),
-					'disableCharacterReplacement'	=> true,
-					'filterDaysAfter'				=> $filter_days_after,
-					'filterDaysBefore'				=> $filter_days_before,
-					'skipRecurrence'				=> $skiprecurrence,
-				));
-				$ICal->initString($ics_contents);
-				
-				// Free up some memory
-				unset($ics_contents);
-
 				// Update general calendar information
-				if (empty($ics_data['title']) && r34ics_boolean_check($title) !== false) { $ics_data['title'] = $ICal->calendarName(); }
-				if (empty($ics_data['description']) && r34ics_boolean_check($description) !== false) { $ics_data['description'] = $ICal->calendarDescription(); }
+				if ($single_feed && r34ics_boolean_check($title) !== false && empty($ics_data['title'])) {
+					$ics_data['title'] = $ICal->calendarName();
+				}
+				if ($single_feed && r34ics_boolean_check($description) !== false && empty($ics_data['description'])) {
+					$ics_data['description'] = $ICal->calendarDescription();
+				}
 				$ics_data['timezone'][$url] = $ICal->calendarTimeZone();
-				if (is_array($ics_data['feed_titles']) && empty($ics_data['feed_titles'][$feed_key])) { $ics_data['feed_titles'][$feed_key] = $ICal->calendarName(); }
-				
+				if (is_array($ics_data['feed_titles']) && empty($ics_data['feed_titles'][$feed_key])) {
+					$ics_data['feed_titles'][$feed_key] = $ICal->calendarName();
+				}
+
 				// Debugging information
 				if ($this->debug) {
 					$this->debug_messages[$url]['Calendar name'] = $ICal->calendarName();
 					$this->debug_messages[$url]['Calendar description'] = $ICal->calendarDescription();
 					$this->debug_messages[$url]['Calendar time zone'] = $ICal->calendarTimeZone();
 					$this->debug_messages[$url]['Default time zone'] = $url_tz->getName();
-					$this->debug_messages[$url]['Parsed date range'] = $range_start . ' to ' . $range_end;
-					$this->debug_messages[$url]['Filter days after'] = $filter_days_after;
-					$this->debug_messages[$url]['Filter days before'] = $filter_days_before;
+					$this->debug_messages[$url]['Parsed date range'] = $range['start'] . ' to ' . $range['end'];
+					$this->debug_messages[$url]['Filter days after'] = $range['days_after'];
+					$this->debug_messages[$url]['Filter days before'] = $range['days_before'];
 					if ($ICal->hasEvents() == false) {
 						$this->debug_messages[$url]['Errors'][] = 'Calendar contains no events.';
 					}
@@ -592,7 +534,7 @@ class R34ICS {
 				}
 
 				// Process events
-				if ($ICal->hasEvents() && $ics_events = $ICal->eventsFromRange($range_start,$range_end)) {
+				if ($ics_events = $ICal->eventsFromRange($range['start'], $range['end'])) {
 				
 					// Assemble events
 					foreach ((array)$ics_events as $event_key => $event) {
@@ -849,6 +791,65 @@ class R34ICS {
 		// Actions after rendering template (can include additional template output)
 		do_action('r34ics_display_calendar_after_render_template', $view, $args, $ics_data);
 
+	}
+	
+	
+	// Callback method for display_calendar(); set basic info parameters
+	public function display_calendar_ics_data_init($args) {
+		$ics_data = array();
+		
+		// Convert URL into array and iterate
+		$ics_data['events'] = array();
+		$ics_data['urls'] = r34ics_space_pipe_explode($args['url'] ?? '');
+		$ics_data['tz'] = !empty($args['tz']) ? r34ics_space_pipe_explode($args['tz']) : get_option('timezone_string');
+		
+		// Set general calendar information
+		$ics_data['view'] = $args['view'] ?? 'month';
+		$ics_data['guid'] = $args['guid'] ?? r34ics_uid();
+		$ics_data['title'] = (isset($args['title']) && r34ics_boolean_check($args['title'])) ? $args['title'] : '';
+		$ics_data['description'] = (isset($args['description']) && r34ics_boolean_check($args['description'])) ? $args['description'] : '';
+
+		// Set colors and feed titles for color key
+		$ics_data['colors'] = apply_filters('r34ics_display_calendar_color_set', (!empty($args['color']) ? r34ics_color_set(r34ics_space_pipe_explode($args['color']), 1, (empty($args['whitetext']) && empty($args['solidcolors']))) : ''), $args);
+		$ics_data['tablebg'] = $args['tablebg'] ?? '';
+		$ics_data['feed_titles'] = !empty($args['feedlabel']) ? explode('|', $args['feedlabel']) : array();
+		
+		// Allow external modification of data array
+		$ics_data = apply_filters('r34ics_display_calendar_ics_data_init', $ics_data, $args);
+		
+		return $ics_data;
+	}
+	
+	
+	// Callback method for display_calendar(); determine rough date range for ICS Parser
+	public function display_calendar_date_range($args) {
+		$range = array();
+
+		$range_unit = 60;
+		if (strpos($args['view'], 'week') !== false) { $range_unit = 15; }
+		if ((!empty($args['startdate']) && intval($args['startdate']) > 20000000)) {
+			$range['start'] = r34ics_date('Y/m/d', $args['startdate'], null, '-' . intval($range_unit) . ' days');
+			$range['end'] = r34ics_date('Y/m/d', $args['startdate'], null, '+' . intval($args['limitdays'] + $range_unit) . ' days');
+		}
+		else {
+			if (!empty($args['pastdays'])) {
+				$range['start'] = r34ics_date('Y/m/d', null, null, '-' . intval($args['pastdays'] + $range_unit) . ' days');
+			}
+			else {
+				$range['start'] = r34ics_date('Y/m/d', null, null, '-' . intval(wp_date('j') + $range_unit) . ' days');
+			}
+			$range['end'] = r34ics_date('Y/m/d', null, null, '+' . intval($args['limitdays'] + $range_unit) . ' days');
+		}
+		// Additional filtering of range dates
+		$range['start'] = apply_filters('r34ics_display_calendar_range_start', $range['start'], $args);
+		$range['end'] = apply_filters('r34ics_display_calendar_range_end', $range['end'], $args);
+
+		// Get day counts for ICS Parser's range filters
+		$now_dtm = new DateTime();
+		$range['days_before'] = $now_dtm->diff(new DateTime($range['start']))->format('%a');
+		$range['days_after']= $now_dtm->diff(new DateTime($range['end']))->format('%a');
+
+		return $range;
 	}
 
 
@@ -1115,6 +1116,47 @@ class R34ICS {
 	}
 	
 	
+	// Callback method for display_calendar(); run URL contents through parser
+	public function ical_parse_url($url, $url_tz_name='UTC', $args=array(), $range=array()) {
+		// Retrieve ICS file
+		$ics_contents = $this->_url_get_contents(
+			$url,
+			($args['method'] ?? ''),
+			false,
+			($args['curlopts'] ?? ''),
+			(intval($args['reload'] ?? 0) != 1),
+			($args['basicauth'] ?? ''),
+			!empty($args['skipdomainerrors'])
+		);
+
+		// No ICS data present -- bail out now
+		if (empty($ics_contents)) { return false; }
+						
+		// Fix issue with hard line breaks inside DESCRIPTION fields (not included in the documentation because problem needs further research)
+		if (!empty($args['linebreakfix'])) {
+			$ics_contents = r34ics_line_break_fix($ics_contents);
+		}
+		
+		// Filter to allow external pre-processing of raw feed contents before parsing
+		$ics_contents = apply_filters('r34ics_display_calendar_preprocess_raw_feed', $ics_contents, $range['start'], $range['end'], $args);
+
+		// Initialize parser
+		if (!$this->parser_loaded) { $this->_load_parser(!empty($args['legacyparser'])); }
+		$ICal = new R34ICS_ICal\ICal('ICal.ics', array(
+			'defaultSpan' => intval(ceil(($args['limitdays'] ?? 365) / 365)),
+			'defaultTimeZone' => $url_tz_name,
+			'disableCharacterReplacement' => true,
+			'filterDaysAfter' => $range['days_after'],
+			'filterDaysBefore' => $range['days_before'],
+			'skipRecurrence' => $args['skiprecurrence'],
+		));
+		$ICal->initString($ics_contents);
+
+		// Return prepared $ICal object
+		return $ICal;
+	}
+
+
 	public function parse_attach_array($attach, $offsite_in_new_tab=true) {
 		if (empty($attach) || !is_array($attach) || count($attach) % 2 !== 0) { return false; }
 		
@@ -1364,8 +1406,8 @@ class R34ICS {
 		}
 
 	}
-
-
+	
+	
 	public function wp_settings() {
 		// Transient timeout
 		// v. 6.11.1 Renamed option from 'r34ics_transient_expiration' to 'r34ics_transient_expiration' so it's not a transient itself
@@ -1446,12 +1488,9 @@ class R34ICS {
 			// Retrieve the feed
 			$ics_contents = $this->_url_get_contents($url, null, false, null, true);
 			
-			// Fix issue with hard line breaks inside DESCRIPTION fields (not included in the documentation because problem needs further research)
-			//$ics_contents = r34ics_line_break_fix($ics_contents);
-
 			// Parse ICS contents
 			if (!$this->parser_loaded) {
-				$this->parser_loaded = $this->_load_parser();
+				$this->_load_parser();
 			}
 			$ICal = new R34ICS_ICal\ICal('ICal.ics');
 			$ICal->initString($ics_contents);
@@ -1473,12 +1512,6 @@ class R34ICS {
 					$content[] = 'VERSION:2.0';
 					$content[] = 'BEGIN:VEVENT';
 					if (isset($event_data->attach)) { $content[] = 'ATTACH:' . r34ics_maybe_enfold($event_data->attach, 7); }
-					/* For privacy reasons we *probably* don't want to include this, so it's removed as of v. 9.3.6
-					if (isset($event_data->attendee_array)) {
-						$item_key = key($event_data->attendee_array[0]);
-						$content[] = 'ATTENDEE;' . $item_key . '=' . $event_data->attendee_array[0][$item_key] . ':' . $event_data->attendee_array[1];
-					}
-					*/
 					if (isset($event_data->categories)) { $content[] = 'CATEGORIES:' . r34ics_maybe_enfold($event_data->categories, 11); }
 					if (isset($event_data->created)) { $content[] = 'CREATED:' . $event_data->created; }
 					if (isset($event_data->description)) { $content[] = 'DESCRIPTION:' . r34ics_maybe_enfold($event_data->description, 12); }
@@ -1505,8 +1538,6 @@ class R34ICS {
 					$content = implode("\r\n", $content); // @todo Chunk lines over 75 characters
 					header('Cache-Control: private, must-revalidate, post-check=0, pre-check=0');
 					header('Expires: 0');
-					//header('Content-Type: application/force-download');
-					//header('Content-Type: application/download');
 					header('Content-Type: text/calendar');
 					header('Content-Disposition: attachment; filename="' . sanitize_title(__('calendar event', 'r34ics')) . '.ics"');
 					header('Content-Length: ' . strlen($content ?? ''));
@@ -1521,6 +1552,7 @@ class R34ICS {
 	protected function _load_parser($legacy=false) {
 		if (!class_exists('R34ICS_ICal\ICal')) { include_once($legacy ? $this->ical_legacy_path : $this->ical_path); }
 		if (!class_exists('R34ICS_ICal\Event')) { include_once($legacy ? $this->event_legacy_path : $this->event_path); }
+		$this->parser_loaded = true;
 		return true;
 	}
 	

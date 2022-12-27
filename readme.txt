@@ -5,7 +5,7 @@ Tags: calendar, iCal, ICS, iCalendar, Google Calendar, Outlook, Office 365, Mac 
 Requires at least: 4.9
 Tested up to: 6.1.1
 Requires PHP: 7.0.0
-Stable tag: 10.3.1
+Stable tag: 10.4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -94,6 +94,17 @@ The paid [ICS Calendar Pro](https://icscalendar.com) add-on includes additional 
 == Screenshots ==
 
 == Changelog ==
+
+= 10.4.0 - 2022.12.26 =
+
+* Began process of refactoring main `R34ICS::display_calendar()` method into smaller, modular components. This process will continue over subsequent updates.
+* Added `r34ics_display_calendar_ics_data_init` filter.
+* Changed default legend style to inline.
+* Changed handling of default calendar name and description when a shortcode contains multiple feed URLs. Will now default to blank instead of the title and description of the last parsed feed.
+* Modified jQuery for showing/hiding rows in week view to use `display: block` instead of `display: table-row` on mobile.
+* Modified CSS selector for event download icon (button) to avoid styles getting steamrolled by Block Editor defaults. Also removed alternate animated icon for loading as the `.loading` state does not seem to be active long enough for the icon to appear.
+* Admin page CSS tweaks.
+* Deleted some code that had been commented out for several versions.
 
 = 10.3.1 - 2022.12.23 =
 

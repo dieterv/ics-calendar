@@ -3,7 +3,7 @@
 Plugin Name: ICS Calendar
 Plugin URI: https://icscalendar.com
 Description: Embed a live updating iCal (ICS) feed in any page using a shortcode.
-Version: 10.3.1
+Version: 10.4.0
 Author: Room 34 Creative Services, LLC
 Author URI: https://room34.com
 License: GPL2
